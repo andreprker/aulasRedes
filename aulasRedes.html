@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Interativo de Crimpagem e Normas de Redes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .lesson-content {
+            display: none;
+        }
+        .lesson-content.active {
+            display: block;
+        }
+        .nav-link.active {
+            background-color: #e0f2fe;
+            color: #0c4a6e;
+            font-weight: 600;
+        }
+        a{
+            background-color: #e0f2fe;
+            color: #0c4a6e;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="flex min-h-screen">
+        <aside class="w-72 bg-white border-r border-slate-200 p-6 hidden md:block flex-shrink-0">
+            <h1 class="text-xl font-bold text-slate-900 mb-8">Crimpagem e Normas</h1>
+            <nav id="desktop-nav">
+                <ul class="space-y-1">
+                    <li><button data-target="lesson-1" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 1: Introdução</button></li>
+                    <li><button data-target="lesson-2" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 2: Ferramentas</button></li>
+                    <li><button data-target="lesson-3" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 3: Estrutura do Cabo</button></li>
+                    <li><button data-target="lesson-4" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 4: Norma T568A</button></li>
+                    <li><button data-target="lesson-5" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 5: Norma T568B</button></li>
+                    <li><button data-target="lesson-6" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 6: Cabos Diretos/Cruzados</button></li>
+                    <li><button data-target="lesson-7" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 7: Prática - Preparação</button></li>
+                    <li><button data-target="lesson-8" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 8: Prática - Crimpagem</button></li>
+                    <li><button data-target="lesson-9" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 9: Teste e Soluções</button></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-6 md:p-10 overflow-x-hidden">
+            <div class="md:hidden mb-6">
+                <label for="mobile-nav-select" class="sr-only">Selecionar Plano de Aula</label>
+                <select id="mobile-nav-select" class="w-full p-3 border border-slate-300 rounded-lg bg-white shadow-sm focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+                    <option value="lesson-1">Aula 1: Introdução</option>
+                    <option value="lesson-2">Aula 2: Ferramentas</option>
+                    <option value="lesson-3">Aula 3: Estrutura do Cabo</option>
+                    <option value="lesson-4">Aula 4: Norma T568A</option>
+                    <option value="lesson-5">Aula 5: Norma T568B</option>
+                    <option value="lesson-6">Aula 6: Cabos Diretos/Cruzados</option>
+                    <option value="lesson-7">Aula 7: Prática - Preparação</option>
+                    <option value="lesson-8">Aula 8: Prática - Crimpagem</option>
+                    <option value="lesson-9">Aula 9: Teste e Soluções</option>
+                </select>
+            </div>
+            
+            <header class="mb-10">
+                 <h2 class="text-4xl font-bold text-slate-900">Curso Prático de Cabeamento de Redes</h2>
+                 <p class="text-lg text-slate-600 mt-2">Navegue pelas aulas para um curso completo sobre os procedimentos e normas técnicas para a crimpagem de cabos de rede, com foco em atividades práticas.</p>
+            </header>
+            
+            <div id="lesson-1" class="lesson-content space-y-6">
+                <article class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Aula 1: Introdução ao Cabeamento Estruturado e Tipos de Cabos</h3>
+                    <p class="mb-4 text-slate-600">O objetivo desta aula é compreender o papel fundamental do cabeamento em redes de computadores e aprender a identificar os principais tipos de cabos utilizados no dia a dia.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (15 min)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li><a href="http://127.0.0.1:5500/redes/importanciaCabeamento.html">Importância do Cabeamento: A base física da rede.</a></li>
+                                <li><a href="http://127.0.0.1:5500/redes/tiposDeCabos.html">Tipos de Cabos: Par Trançado (<code>UTP/STP</code>), Coaxial, Fibra Óptica.</a></li>
+                                <li><a href="http://127.0.0.1:5500/redes/cabos.html">Categorias de Par Trançado: <code>Cat5e</code>, <code>Cat6</code>, <code>Cat6a</code>.</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Atividade Prática (25 min)</h4>
+                            <p class="text-slate-700">Em grupos, os alunos irão identificar e descrever as características visuais de amostras de cabos (cor, espessura, blindagem, número de pares).</p>
+                        </div>    
+                    </div>
+                </article>
+            </div>
+
+            <div id="lesson-2" class="lesson-content space-y-6">
+                <article class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Aula 2: Ferramentas Essenciais para Crimpagem</h3>
+                    <p class="mb-4 text-slate-600">Nesta aula, os alunos irão conhecer, identificar e aprender a manusear corretamente as ferramentas básicas para a montagem de cabos de rede.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (15 min)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li><a href="http://127.0.0.1:5500/redes/alicate.html">Alicate de Crimpagem <code>RJ45</code>.</a></li>
+                                <li><a href="http://127.0.0.1:5500/redes/decapador.html">Decapador de Cabos.</a></li>
+                                <li><a href="http://127.0.0.1:5500/redes/leserTest.html">Testador de Cabos (Lan Tester).</a></li>
+                                <li><a href="http://127.0.0.1:5500/redes/rj45.html">Conectores <code>RJ45</code>.</a></li>
+                                <li><a href="http://127.0.0.1:5500/redes/seguranca.html">Cuidados e Segurança.</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Atividade Prática (25 min)</h4>
+                            <p class="text-slate-700">Cada aluno (ou grupo) irá manusear o kit de ferramentas, praticando a decapagem da jaqueta externa de um cabo e observando o funcionamento de um testador.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div id="lesson-3" class="lesson-content space-y-6">
+                <article class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Aula 3: Estrutura Interna do Cabo de Par Trançado</h3>
+                    <p class="mb-4 text-slate-600">O foco é entender a composição interna do cabo de par trançado e a importância do trançamento dos pares para a qualidade do sinal.</p>
+                     <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (15 min)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li><a href="composicao.html">Composição: 8 fios, 4 pares, cores padrão.</a></li>
+                                <li><a href="importanciaDoTancamento.html">Importância do Trançamento: Redução de interferência (<code>EMI</code>) e crosstalk.</a></li>
+                                <li><a href="utpStp.html">Diferença entre <code>UTP</code> vs. <code>STP</code>.</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Atividade Prática (25 min)</h4>
+                            <p class="text-slate-700">Os alunos irão decapar um pedaço de cabo UTP, destorcer os pares e alinhar os 8 fios para observar sua estrutura interna.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div id="lesson-4" class="lesson-content space-y-6">
+                <article class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Aula 4: Norma TIA/EIA 568A - Sequência de Cores</h3>
+                    <p class="mb-4 text-slate-600">Aprender e memorizar a sequência de cores do padrão T568A, uma das duas normas essenciais para a crimpagem de cabos de rede.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (15 min)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Introdução às Normas Técnicas (Compatibilidade, Desempenho).</li>
+                                <li>Padrão <code>TIA/EIA 568</code>.</li>
+                                <li>Sequência de Cores do Padrão <code>T568A</code>.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Atividade Prática (25 min)</h4>
+                            <p class="text-slate-700">Praticar a organização dos 8 fios de um cabo UTP na sequência exata do padrão T568A, com verificação do professor ou colegas.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div id="lesson-5" class="lesson-content space-y-6">
+                <article class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Aula 5: Norma TIA/EIA 568B - Sequência de Cores</h3>
+                    <p class="mb-4 text-slate-600">Aprender a sequência de cores do padrão T568B, o mais comum no mercado, e compará-lo com o padrão T568A.</p>
+                     <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (15 min)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Revisão rápida do padrão <code>T568A</code>.</li>
+                                <li>Sequência de Cores do Padrão <code>T568B</code>.</li>
+                                <li>Comparação <code>T568A</code> vs. <code>T568B</code> (troca dos pares Laranja e Verde).</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Atividade Prática (25 min)</h4>
+                            <p class="text-slate-700">Praticar a organização dos 8 fios de um cabo UTP na sequência exata do padrão T568B. Repetir até memorizar a ordem.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div id="lesson-6" class="lesson-content space-y-6">
+                <article class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Aula 6: Cabos Diretos (Straight-Through) e Cruzados (Crossover)</h3>
+                    <p class="mb-4 text-slate-600">Entender a diferença fundamental entre cabos diretos e cruzados, suas aplicações e como os padrões T568A e T568B são usados para criá-los.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (15 min)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Cabo Direto (<code>T568B</code> em ambas as pontas) para conectar <code>PC-Switch</code>.</li>
+                                <li>Cabo Cruzado (<code>T568A</code> em uma ponta, <code>T568B</code> na outra) para conectar <code>PC-PC</code>.</li>
+                                <li>Auto MDI/MDI-X em equipamentos modernos.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Atividade Prática (25 min)</h4>
+                            <p class="text-slate-700">Em duplas, desenhar os esquemas de crimpagem para um cabo direto e um cabo cruzado, mostrando a sequência de cores em ambas as pontas.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div id="lesson-7" class="lesson-content space-y-6">
+                <article class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Aula 7: Procedimento de Crimpagem - Parte 1 (Preparação)</h3>
+                    <p class="mb-4 text-slate-600">Aula focada nos primeiros passos práticos da crimpagem: decapagem correta da jaqueta e organização precisa dos fios na sequência T568B.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (10 min)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Revisão do Padrão <code>T568B</code>.</li>
+                                <li>Passos detalhados da preparação: Corte, Decapagem e Alinhamento.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Atividade Prática (30 min)</h4>
+                            <p class="text-slate-700">Os alunos irão praticar a preparação de várias pontas de cabo, focando em conseguir uma decapagem limpa e um alinhamento perfeito dos fios na norma T568B.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div id="lesson-8" class="lesson-content space-y-6">
+                <article class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Aula 8: Procedimento de Crimpagem - Parte 2 (Inserção e Crimpagem)</h3>
+                    <p class="mb-4 text-slate-600">Nesta aula, os alunos irão finalizar a montagem de uma ponta do cabo, aprendendo a inserir os fios no conector RJ45 e a usar o alicate para a crimpagem final.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (10 min)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Corte dos fios na medida certa.</li>
+                                <li>Técnica de inserção dos fios no conector <code>RJ45</code>.</li>
+                                <li>Verificação visual antes de crimpar.</li>
+                                <li>Uso correto do alicate de crimpagem.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Atividade Prática (30 min)</h4>
+                            <p class="text-slate-700">Utilizando os cabos preparados na aula anterior, os alunos irão cortar, inserir e crimpar os conectores RJ45, repetindo o processo para ganhar prática.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div id="lesson-9" class="lesson-content space-y-6">
+                <article class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Aula 9: Teste de Cabos e Solução de Problemas Comuns</h3>
+                    <p class="mb-4 text-slate-600">A aula final foca em garantir a qualidade do trabalho, ensinando a testar os cabos crimpados e a diagnosticar os problemas mais comuns.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (15 min)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Como usar o Testador de Cabos (Lan Tester).</li>
+                                <li>Problemas Comuns: Fio Aberto, Curto-Circuito, Fio Invertido.</li>
+                                <li>Como interpretar os LEDs do testador.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Atividade Prática (25 min)</h4>
+                            <p class="text-slate-700">Os alunos irão testar os cabos que montaram. O professor fornecerá cabos com falhas intencionais para que os alunos possam praticar o diagnóstico.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const lessonContents = document.querySelectorAll('.lesson-content');
+            const mobileNav = document.getElementById('mobile-nav-select');
+
+            function showLesson(targetId) {
+                lessonContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+
+                const targetLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
+                if (targetLink) {
+                    targetLink.classList.add('active');
+                }
+
+                if(mobileNav.value !== targetId) {
+                    mobileNav.value = targetId;
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const targetId = link.getAttribute('data-target');
+                    showLesson(targetId);
+                });
+            });
+
+            mobileNav.addEventListener('change', (event) => {
+                showLesson(event.target.value);
+            });
+            
+            showLesson('lesson-1');
+        });
+    </script>
+</body>
+</html>

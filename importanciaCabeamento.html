@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Importância do Cabeamento de Rede</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #334155; /* slate-700 */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .server-rack-line {
+            transition: background-color 0.5s ease-in-out;
+        }
+        .content-block {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .content-hidden {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+            position: absolute;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <a href="aulasRedes.html">Início</a>
+    <main class="w-full">
+        <section id="hero" class="text-center py-20 px-4 bg-slate-800 text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">A Espinha Dorsal Invisível da Sua Rede</h1>
+            <p class="max-w-3xl mx-auto text-lg text-slate-300">
+                O cabeamento é a fundação sobre a qual toda a sua infraestrutura digital opera. Descubra por que a sua qualidade não é um detalhe, mas sim um pilar estratégico.
+            </p>
+        </section>
+
+        <section id="comparison" class="py-16 md:py-24 px-4 section-fade-in">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4 text-slate-800">Estruturado vs. Inadequado: Um Contraste de Impacto</h2>
+                <p class="max-w-3xl mx-auto text-lg mb-12">
+                    A diferença entre um cabeamento bem planeado e um negligenciado é gritante, afetando tudo, desde a performance diária até à estabilidade a longo prazo. Selecione um cenário para ver a diferença em tempo real.
+                </p>
+                <div class="flex justify-center space-x-4 mb-12">
+                    <button id="btn-good" class="px-6 py-3 font-semibold rounded-lg shadow-md transition-transform transform hover:scale-105 bg-blue-600 text-white">Cabeamento Estruturado</button>
+                    <button id="btn-bad" class="px-6 py-3 font-semibold rounded-lg shadow-md transition-transform transform hover:scale-105 bg-slate-200 text-slate-800">Cabeamento Inadequado</button>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="relative w-full h-80 md:h-96 flex justify-center items-center">
+                        <div id="view-good" class="content-block w-full">
+                            <div class="server-rack bg-slate-700 w-48 h-full mx-auto rounded-lg p-4 flex flex-col justify-between">
+                                <div>
+                                    <div class="server-rack-line bg-green-400 h-2 rounded mb-2"></div>
+                                    <div class="server-rack-line bg-green-400 h-2 rounded mb-2"></div>
+                                    <div class="server-rack-line bg-green-400 h-2 rounded mb-2"></div>
+                                </div>
+                                <div class="text-green-300 text-xs font-mono text-center">STATUS: OTIMIZADO</div>
+                                <div>
+                                    <div class="server-rack-line bg-green-400 h-2 rounded mt-2"></div>
+                                    <div class="server-rack-line bg-green-400 h-2 rounded mt-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="view-bad" class="content-block w-full content-hidden">
+                             <div class="server-rack bg-slate-700 w-48 h-full mx-auto rounded-lg p-4 flex flex-col justify-between overflow-hidden">
+                                <div>
+                                    <div class="server-rack-line bg-amber-400 h-2 rounded mb-2"></div>
+                                    <div class="server-rack-line bg-red-500 h-2 rounded mb-2"></div>
+                                    <div class="server-rack-line bg-green-400 h-2 rounded mb-2"></div>
+                                </div>
+                                <div class="text-red-400 text-xs font-mono text-center">STATUS: INSTÁVEL</div>
+                                <div>
+                                     <div class="server-rack-line bg-red-500 h-2 rounded mt-2"></div>
+                                    <div class="server-rack-line bg-amber-400 h-2 rounded mt-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative text-left h-80 md:h-96">
+                        <div id="text-good" class="content-block">
+                            <h3 class="font-bold text-2xl mb-4 text-blue-700">Benefícios de um Sistema Estruturado</h3>
+                            <ul class="space-y-3 list-inside">
+                                <li class="flex items-start"><span class="text-green-500 mr-3 text-xl">✔</span><span><strong class="font-semibold">Performance Máxima:</strong> A rede opera na velocidade contratada, sem gargalos.</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-3 text-xl">✔</span><span><strong class="font-semibold">Alta Confiabilidade:</strong> Conexões estáveis e tempo de inatividade mínimo.</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-3 text-xl">✔</span><span><strong class="font-semibold">Manutenção Simplificada:</strong> Identificação rápida de problemas e gestão eficiente.</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-3 text-xl">✔</span><span><strong class="font-semibold">Pronto para o Futuro:</strong> Facilidade para expandir e adotar novas tecnologias.</span></li>
+                            </ul>
+                        </div>
+                        <div id="text-bad" class="content-block content-hidden">
+                            <h3 class="font-bold text-2xl mb-4 text-red-700">Consequências de um Sistema Inadequado</h3>
+                            <ul class="space-y-3 list-inside">
+                                <li class="flex items-start"><span class="text-red-500 mr-3 text-xl">✖</span><span><strong class="font-semibold">Desempenho Degradado:</strong> Lentidão constante e erros de transmissão.</span></li>
+                                <li class="flex items-start"><span class="text-red-500 mr-3 text-xl">✖</span><span><strong class="font-semibold">Interrupções Frequentes:</strong> Falhas e quedas de conexão imprevisíveis.</span></li>
+                                <li class="flex items-start"><span class="text-red-500 mr-3 text-xl">✖</span><span><strong class="font-semibold">Custos Elevados:</strong> Resolução de problemas demorada e cara.</span></li>
+                                <li class="flex items-start"><span class="text-red-500 mr-3 text-xl">✖</span><span><strong class="font-semibold">Vulnerabilidades de Segurança:</strong> Risco de acesso físico e adulteração de dados.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pillars" class="py-16 md:py-24 bg-slate-100 px-4 section-fade-in">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-800">Os Pilares de um Cabeamento de Qualidade</h2>
+                    <p class="max-w-3xl mx-auto text-lg mt-4">
+                        Um investimento em cabeamento estruturado se traduz em benefícios tangíveis que sustentam toda a operação. Cada pilar é fundamental para garantir uma infraestrutura resiliente e eficiente.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-4xl mb-4 text-blue-600">🚀</div>
+                        <h3 class="text-xl font-bold mb-2">Velocidade e Largura de Banda</h3>
+                        <p class="text-slate-600">Garante que a rede suporte as demandas de aplicações modernas, como vídeo em alta definição e transferências de grandes ficheiros, sem comprometer a performance.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-4xl mb-4 text-blue-600">🛡️</div>
+                        <h3 class="text-xl font-bold mb-2">Confiabilidade e Estabilidade</h3>
+                        <p class="text-slate-600">Minimiza falhas físicas e problemas intermitentes, resultando em uma rede estável e um serviço consistente para todos os utilizadores.</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-4xl mb-4 text-blue-600">🔒</div>
+                        <h3 class="text-xl font-bold mb-2">Segurança Física</h3>
+                        <p class="text-slate-600">Um sistema organizado e protegido previne adulterações, interceções e danos intencionais, protegendo a integridade dos dados na sua camada mais fundamental.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-4xl mb-4 text-blue-600">📈</div>
+                        <h3 class="text-xl font-bold mb-2">Escalabilidade para o Futuro</h3>
+                        <p class="text-slate-600">Permite adicionar novos dispositivos, expandir a cobertura e atualizar tecnologias com facilidade, evitando custos e interrupções significativas no futuro.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-4xl mb-4 text-blue-600">🛠️</div>
+                        <h3 class="text-xl font-bold mb-2">Manutenção e Gestão</h3>
+                        <p class="text-slate-600">A organização e documentação simplificam a resolução de problemas, reduzindo o tempo de inatividade e os custos operacionais de manutenção.</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-4xl mb-4 text-blue-600">💰</div>
+                        <h3 class="text-xl font-bold mb-2">Redução de Custos Ocultos</h3>
+                        <p class="text-slate-600">Evita despesas com diagnósticos longos, perda de produtividade por lentidão e a necessidade de refazer a infraestrutura precocemente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chart-section" class="py-16 md:py-24 px-4 section-fade-in">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-slate-800">Visualizando o Impacto Geral</h2>
+                <p class="max-w-3xl mx-auto text-lg mt-4 mb-8">
+                    Este gráfico de radar demonstra como um cabeamento de alta qualidade eleva todos os aspetos da sua rede em comparação com uma infraestrutura inadequada. Clique para alternar entre os cenários e ver a diferença.
+                </p>
+                <div class="chart-container">
+                    <canvas id="impactChart"></canvas>
+                </div>
+                <div class="mt-8 flex justify-center space-x-4">
+                     <button id="chart-btn-good" class="px-5 py-2 font-semibold rounded-md shadow transition-colors bg-blue-600 text-white">Cenário Otimizado</button>
+                     <button id="chart-btn-bad" class="px-5 py-2 font-semibold rounded-md shadow transition-colors bg-slate-200 text-slate-800">Cenário Degradado</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-slate-800 text-white text-center py-8 px-4">
+            <h2 class="text-2xl font-bold">Um Investimento Estratégico, Não uma Despesa.</h2>
+            <p class="max-w-3xl mx-auto mt-4 text-slate-300">
+                Ignorar a qualidade do cabeamento é comprometer a base do seu negócio digital. Investir numa infraestrutura robusta é garantir performance, segurança e crescimento para o futuro.
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const goodCablingData = {
+                labels: ['Performance', 'Confiabilidade', 'Segurança', 'Escalabilidade', 'Manutenção'],
+                datasets: [{
+                    label: 'Cabeamento de Alta Qualidade',
+                    data: [95, 90, 85, 90, 80],
+                    fill: true,
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                    borderColor: 'rgb(59, 130, 246)',
+                    pointBackgroundColor: 'rgb(59, 130, 246)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(59, 130, 246)'
+                }]
+            };
+
+            const badCablingData = {
+                labels: ['Performance', 'Confiabilidade', 'Segurança', 'Escalabilidade', 'Manutenção'],
+                datasets: [{
+                    label: 'Cabeamento Inadequado',
+                    data: [30, 25, 40, 20, 15],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    pointBackgroundColor: 'rgb(255, 99, 132)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(255, 99, 132)'
+                }]
+            };
+
+            const chartConfig = {
+                type: 'radar',
+                data: goodCablingData,
+                options: {
+                    maintainAspectRatio: false,
+                    elements: {
+                        line: {
+                            borderWidth: 3
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 14,
+                                }
+                            },
+                            ticks: {
+                                backdropColor: 'rgba(255, 255, 255, 0.75)',
+                                color: '#64748b'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    }
+                }
+            };
+            
+            const ctx = document.getElementById('impactChart').getContext('2d');
+            const impactChart = new Chart(ctx, chartConfig);
+            
+            const btnChartGood = document.getElementById('chart-btn-good');
+            const btnChartBad = document.getElementById('chart-btn-bad');
+
+            function updateChart(data, buttonToActivate) {
+                impactChart.data = data;
+                impactChart.update();
+                
+                [btnChartGood, btnChartBad].forEach(btn => {
+                    btn.classList.remove('bg-blue-600', 'text-white');
+                    btn.classList.add('bg-slate-200', 'text-slate-800');
+                });
+                buttonToActivate.classList.add('bg-blue-600', 'text-white');
+                buttonToActivate.classList.remove('bg-slate-200', 'text-slate-800');
+            }
+
+            btnChartGood.addEventListener('click', () => updateChart(goodCablingData, btnChartGood));
+            btnChartBad.addEventListener('click', () => updateChart(badCablingData, btnChartBad));
+            
+            const btnGood = document.getElementById('btn-good');
+            const btnBad = document.getElementById('btn-bad');
+            const viewGood = document.getElementById('view-good');
+            const viewBad = document.getElementById('view-bad');
+            const textGood = document.getElementById('text-good');
+            const textBad = document.getElementById('text-bad');
+            const goodRackLines = viewGood.querySelectorAll('.server-rack-line');
+            const badRackLines = viewBad.querySelectorAll('.server-rack-line');
+
+            function setComparisonView(state) {
+                if (state === 'good') {
+                    btnGood.className = 'px-6 py-3 font-semibold rounded-lg shadow-md transition-transform transform hover:scale-105 bg-blue-600 text-white';
+                    btnBad.className = 'px-6 py-3 font-semibold rounded-lg shadow-md transition-transform transform hover:scale-105 bg-slate-200 text-slate-800';
+                    viewGood.classList.remove('content-hidden');
+                    textGood.classList.remove('content-hidden');
+                    viewBad.classList.add('content-hidden');
+                    textBad.classList.add('content-hidden');
+                } else {
+                    btnBad.className = 'px-6 py-3 font-semibold rounded-lg shadow-md transition-transform transform hover:scale-105 bg-red-600 text-white';
+                    btnGood.className = 'px-6 py-3 font-semibold rounded-lg shadow-md transition-transform transform hover:scale-105 bg-slate-200 text-slate-800';
+                    viewBad.classList.remove('content-hidden');
+                    textBad.classList.remove('content-hidden');
+                    viewGood.classList.add('content-hidden');
+                    textGood.classList.add('content-hidden');
+                }
+            }
+
+            btnGood.addEventListener('click', () => setComparisonView('good'));
+            btnBad.addEventListener('click', () => setComparisonView('bad'));
+            
+            const sections = document.querySelectorAll('.section-fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            setComparisonView('good');
+            updateChart(goodCablingData, btnChartGood);
+        });
+    </script>
+</body>
+</html>

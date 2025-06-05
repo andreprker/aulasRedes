@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabo de Par Trançado: Composição e Estrutura</title>
+    <!-- Inclui Tailwind CSS para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte Inter para todo o corpo da página */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Cor de fundo suave */
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 lg:p-12">
+    <a href="aulasRedes.html">Início</a>
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+        <!-- Cabeçalho da página -->
+        <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 rounded-t-lg">
+            <h1 class="text-3xl md:text-4xl font-bold text-center mb-2">Cabo de Par Trançado</h1>
+            <p class="text-center text-lg md:text-xl">Composição, Cores Padrão e Estrutura Interna</p>
+        </header>
+
+        <!-- Conteúdo principal da página -->
+        <main class="p-6 md:p-8">
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">O que é um Cabo de Par Trançado?</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Um <strong class="text-blue-600">cabo de par trançado</strong> é um tipo de cabeamento de rede onde dois condutores de um único circuito são trançados juntos por razões de compatibilidade eletromagnética (EMC). Os pares são trançados para cancelar a interferência eletromagnética (EMI) de fontes externas e o crosstalk (interferência entre os próprios pares). É amplamente utilizado em redes Ethernet e telefonia.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Composição: 8 Fios e 4 Pares</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Dentro de um cabo de par trançado padrão (como o Cat5e, Cat6 ou Cat7), você encontrará <strong class="text-blue-600">8 fios individuais</strong>. Estes 8 fios são agrupados em <strong class="text-blue-600">4 pares</strong>, e cada par é trançado entre si. O trançamento é crucial para reduzir a interferência e manter a integridade do sinal em longas distâncias.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-sm text-center">
+                        <p class="font-bold text-lg text-gray-800">Par 1</p>
+                        <p class="text-sm text-gray-600">Fio A e Fio B</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-sm text-center">
+                        <p class="font-bold text-lg text-gray-800">Par 2</p>
+                        <p class="text-sm text-gray-600">Fio C e Fio D</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-sm text-center">
+                        <p class="font-bold text-lg text-gray-800">Par 3</p>
+                        <p class="text-sm text-gray-600">Fio E e Fio F</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-sm text-center">
+                        <p class="font-bold text-lg text-gray-800">Par 4</p>
+                        <p class="text-sm text-gray-600">Fio G e Fio H</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Cores Padrão (T568A e T568B)</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Para garantir a compatibilidade e a correta crimpagem dos cabos, existem dois padrões de cores principais, definidos pela TIA/EIA-568: <strong class="text-blue-600">T568A</strong> e <strong class="text-blue-600">T568B</strong>. Ambos os padrões utilizam os mesmos 4 pares de fios, mas com uma ordem diferente para os pares laranja e verde.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Padrão T568A -->
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Padrão T568A</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #87CEEB;"></span> Verde-Branco</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #008000;"></span> Verde</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #FFA500;"></span> Laranja-Branco</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #0000FF;"></span> Azul</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #ADD8E6;"></span> Azul-Branco</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #FF0000;"></span> Laranja</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #A52A2A;"></span> Marrom-Branco</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #8B4513;"></span> Marrom</li>
+                        </ul>
+                    </div>
+
+                    <!-- Padrão T568B -->
+                    <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-green-800 mb-3">Padrão T568B</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #FFA500;"></span> Laranja-Branco</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #FF0000;"></span> Laranja</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #87CEEB;"></span> Verde-Branco</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #0000FF;"></span> Azul</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #ADD8E6;"></span> Azul-Branco</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #008000;"></span> Verde</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #A52A2A;"></span> Marrom-Branco</li>
+                            <li class="flex items-center"><span class="w-4 h-4 rounded-full mr-2" style="background-color: #8B4513;"></span> Marrom</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-600 mt-4 italic">
+                    <strong class="text-red-500">Importante:</strong> Para um cabo direto (straight-through), ambas as extremidades devem ser crimpadas no mesmo padrão (T568A-T568A ou T568B-T568B). Para um cabo crossover, uma extremidade é T568A e a outra é T568B.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Estrutura Interna do Cabo</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    A estrutura de um cabo de par trançado é projetada para otimizar a transmissão de dados e minimizar interferências.
+                </p>
+                <ul class="list-disc list-inside text-gray-700 space-y-3">
+                    <li>
+                        <strong class="text-blue-600">Condutores:</strong> Geralmente feitos de cobre, são os fios internos que transportam os dados.
+                    </li>
+                    <li>
+                        <strong class="text-blue-600">Isolamento dos Fios:</strong> Cada condutor individual é revestido com um material isolante (geralmente plástico) de cor diferente, que permite a identificação dos pares e evita curtos-circuitos.
+                    </li>
+                    <li>
+                        <strong class="text-blue-600">Trançamento dos Pares:</strong> Como o nome sugere, os fios são trançados em pares. A taxa de trançamento (o número de voltas por unidade de comprimento) varia entre os pares para reduzir o crosstalk e a interferência eletromagnética (EMI). Cada par tem uma taxa de trançamento diferente para que os ruídos se cancelem de forma mais eficaz.
+                    </li>
+                    <li>
+                        <strong class="text-blue-600">Enchimento (Opcional):</strong> Alguns cabos (especialmente Cat6 e superiores) podem ter um spline central de plástico (também chamado de "cruz" ou "separador") que mantém os pares separados, minimizando ainda mais o crosstalk.
+                    </li>
+                    <li>
+                        <strong class="text-blue-600">Blindagem (Opcional - STP/FTP):</strong> Em cabos blindados (STP - Shielded Twisted Pair ou FTP - Foiled Twisted Pair), há uma camada de blindagem (folha de alumínio ou malha trançada) ao redor dos pares internos ou ao redor de todos os pares combinados. Isso oferece proteção adicional contra EMI externa.
+                    </li>
+                    <li>
+                        <strong class="text-blue-600">Revestimento Externo (Jacket):</strong> A camada mais externa do cabo, geralmente feita de PVC ou LSZH (Low Smoke Zero Halogen), que protege todos os componentes internos de danos físicos e ambientais. A cor do revestimento pode indicar o tipo de cabo ou sua classificação.
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- Rodapé da página -->
+        <footer class="bg-gray-200 text-gray-700 p-6 text-center rounded-b-lg text-sm">
+            <p>&copy; 2025 Informações sobre Cabos de Rede. Todos os direitos reservados.</p>
+            <p>Criado para fins educacionais.</p>
+        </footer>
+    </div>
+</body>
+</html>

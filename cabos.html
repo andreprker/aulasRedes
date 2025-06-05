@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias de Cabos de Par Trançado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfcfb; /* Slightly off-white */
+            color: #4a4a4a; /* Dark gray for text */
+        }
+        .cable-visual {
+            height: 40px;
+            border-radius: 9999px; /* Full rounded */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .cable-line {
+            height: 8px;
+            background-color: #3b82f6; /* Blue-600 */
+            border-radius: 9999px;
+            transition: all 0.3s ease-in-out;
+        }
+        .cat5e-line { width: 60%; }
+        .cat6-line { width: 75%; background-color: #8b5cf6; } /* Purple-500 */
+        .cat6a-line { width: 90%; background-color: #ec4899; box-shadow: 0 0 15px 5px rgba(236, 72, 153, 0.5); } /* Pink-500 with glow */
+    </style>
+</head>
+<body class="antialiased">
+    <a href="aulasRedes.html">Início</a>
+    <main class="container mx-auto px-4 py-8 md:py-16">
+
+        <section id="hero" class="text-center mb-12 md:mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Categorias de Cabos de Par Trançado</h1>
+            <p class="max-w-3xl mx-auto text-lg text-slate-600">
+                Descubra as diferenças cruciais entre Cat5e, Cat6 e Cat6a, e como cada um se adapta às necessidades da sua rede, desde a velocidade até à distância e frequência.
+                <img src="inner-structure-of-cat5-cat5e-and-cat6.jpg" alt="Cabos" width="300" height="200" title="Cabos" >
+            </p>
+        </section>
+
+        <section id="cat5e-section" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 md:mb-16">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Cat5e (Category 5 Enhanced)</h2>
+                <p class="text-lg text-slate-600 mb-8">
+                    Esta secção detalha o cabo Cat5e, a base de muitas redes Ethernet. É uma opção robusta e económica para necessidades de rede padrão, oferecendo um desempenho fiável para o uso diário.
+                </p>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/3 flex justify-center">
+                        <div class="cable-visual w-full max-w-xs bg-slate-100">
+                            <div class="cable-line cat5e-line"></div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3 text-left">
+                        <ul class="space-y-4 text-slate-700">
+                            <li><strong class="font-semibold text-blue-700">Capacidade:</strong> Suporta velocidades de rede de até <span class="font-bold">1 Gigabit por segundo (Gbps)</span>.</li>
+                            <li><strong class="font-semibold text-blue-700">Frequência:</strong> Opera em frequências de até <span class="font-bold">100 MHz</span>.</li>
+                            <li><strong class="font-semibold text-blue-700">Distância:</strong> Pode atingir <span class="font-bold">100 metros</span> de comprimento para 1 Gbps.</li>
+                            <li><strong class="font-semibold text-blue-700">Uso Comum:</strong> Amplamente utilizado em redes domésticas e pequenas empresas, ideal para navegação na internet e transferência de ficheiros.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cat6-section" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 md:mb-16">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Cat6 (Category 6)</h2>
+                <p class="text-lg text-slate-600 mb-8">
+                    Aqui exploramos o cabo Cat6, um passo à frente em desempenho, especialmente para ambientes que exigem maior largura de banda ou que preveem futuras atualizações para velocidades mais elevadas em distâncias moderadas.
+                </p>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/3 flex justify-center">
+                        <div class="cable-visual w-full max-w-xs bg-slate-100">
+                            <div class="cable-line cat6-line"></div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3 text-left">
+                        <ul class="space-y-4 text-slate-700">
+                            <li><strong class="font-semibold text-purple-700">Capacidade:</strong> Suporta <span class="font-bold">1 Gbps</span> em até 100 metros e <span class="font-bold">10 Gbps</span> em distâncias de até 55 metros.</li>
+                            <li><strong class="font-semibold text-purple-700">Frequência:</strong> Opera em frequências de até <span class="font-bold">250 MHz</span>.</li>
+                            <li><strong class="font-semibold text-purple-700">Uso Comum:</strong> Ideal para redes corporativas que buscam melhor desempenho e menos *crosstalk* que a Cat5e.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cat6a-section" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 md:mb-16">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Cat6a (Category 6 Augmented)</h2>
+                <p class="text-lg text-slate-600 mb-8">
+                    Esta secção foca-se no Cat6a, a solução de ponta para redes de alto desempenho. É a escolha definitiva para ambientes que necessitam de 10 Gbps de forma consistente em longas distâncias, minimizando interferências.
+                </p>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/3 flex justify-center">
+                        <div class="cable-visual w-full max-w-xs bg-slate-100">
+                            <div class="cable-line cat6a-line"></div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3 text-left">
+                        <ul class="space-y-4 text-slate-700">
+                            <li><strong class="font-semibold text-pink-700">Capacidade:</strong> Suporta <span class="font-bold">10 Gigabits por segundo (Gbps)</span> em toda a sua extensão.</li>
+                            <li><strong class="font-semibold text-pink-700">Frequência:</strong> Opera em frequências de até <span class="font-bold">500 MHz</span>.</li>
+                            <li><strong class="font-semibold text-pink-700">Distância:</strong> Pode atingir <span class="font-bold">100 metros</span> de comprimento para 10 Gbps.</li>
+                            <li><strong class="font-semibold text-pink-700">Uso Comum:</strong> Escolha ideal para redes de alto desempenho, *data centers* e infraestruturas críticas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="summary-section" class="bg-slate-100 p-8 md:p-12 rounded-xl shadow-inner">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">Resumo Comparativo</h2>
+                <p class="text-lg text-slate-600 mb-8">
+                    Esta tabela resume as principais diferenças entre as categorias, permitindo uma comparação rápida para ajudar na sua decisão.
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-lg shadow-md">
+                        <thead>
+                            <tr class="bg-slate-200 text-slate-700 uppercase text-sm leading-normal">
+                                <th class="py-3 px-6 text-left">Característica</th>
+                                <th class="py-3 px-6 text-left">Cat5e</th>
+                                <th class="py-3 px-6 text-left">Cat6</th>
+                                <th class="py-3 px-6 text-left">Cat6a</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-slate-600 text-sm font-light">
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="py-3 px-6 text-left whitespace-nowrap font-semibold">Velocidade Máxima</td>
+                                <td class="py-3 px-6 text-left">1 Gbps (100m)</td>
+                                <td class="py-3 px-6 text-left">1 Gbps (100m) / 10 Gbps (55m)</td>
+                                <td class="py-3 px-6 text-left">10 Gbps (100m)</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="py-3 px-6 text-left whitespace-nowrap font-semibold">Frequência</td>
+                                <td class="py-3 px-6 text-left">100 MHz</td>
+                                <td class="py-3 px-6 text-left">250 MHz</td>
+                                <td class="py-3 px-6 text-left">500 MHz</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="py-3 px-6 text-left whitespace-nowrap font-semibold">Custo Relativo</td>
+                                <td class="py-3 px-6 text-left">Baixo</td>
+                                <td class="py-3 px-6 text-left">Médio</td>
+                                <td class="py-3 px-6 text-left">Alto</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="py-3 px-6 text-left whitespace-nowrap font-semibold">Uso Típico</td>
+                                <td class="py-3 px-6 text-left">Residencial / Pequenas Empresas</td>
+                                <td class="py-3 px-6 text-left">Corporativo / Futuras Atualizações</td>
+                                <td class="py-3 px-6 text-left">Data Centers / Alta Performance</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

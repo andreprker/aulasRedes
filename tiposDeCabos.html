@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Interativo de Cabos de Rede</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfcfb;
+            color: #4a4a4a;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 500px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 500px;
+            }
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+        .tab-button.active {
+            border-bottom-color: #3b82f6; /* blue-600 */
+            color: #1e3a8a; /* blue-900 */
+        }
+        .content-panel {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .content-panel.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .cable-viz {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 12rem;
+            background-color: #e2e8f0; /* slate-200 */
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow: hidden;
+        }
+        .utp-viz-line { background-color: #f97316; }
+        .stp-viz-shield { border: 2px dashed #94a3b8; }
+        .coaxial-core { background-color: #eab308; }
+        .coaxial-insulator { background-color: #ffffff; }
+        .coaxial-shield { background-color: #94a3b8; }
+        .coaxial-jacket { background-color: #334155; }
+        .fiber-core {
+            height: 10px;
+            background: linear-gradient(90deg, #ec4899, #8b5cf6, #3b82f6);
+            box-shadow: 0 0 15px 3px #a78bfa;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <a href="aulasRedes.html">Início</a>
+    <main class="container mx-auto px-4 py-8 md:py-16">
+
+        <section id="hero" class="text-center mb-12 md:mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Guia Interativo de Cabos de Rede</h1>
+            <p class="max-w-3xl mx-auto text-lg text-slate-600">
+                A escolha do cabo certo é a fundação para uma rede rápida e confiável. Explore os tipos mais comuns para entender qual se adapta melhor às suas necessidades.
+            </p>
+        </section>
+
+        <section id="cable-explorer">
+            <div class="sticky top-0 bg-fdfcfb/80 backdrop-blur-sm z-10 mb-8 border-b border-slate-200">
+                <div class="max-w-4xl mx-auto flex justify-center md:justify-around space-x-2 md:space-x-4">
+                    <button class="tab-button flex-1 py-4 text-center text-sm md:text-lg font-semibold text-slate-600" data-target="panel-twisted">Par Trançado</button>
+                    <button class="tab-button flex-1 py-4 text-center text-sm md:text-lg font-semibold text-slate-600" data-target="panel-coaxial">Cabo Coaxial</button>
+                    <button class="tab-button flex-1 py-4 text-center text-sm md:text-lg font-semibold text-slate-600" data-target="panel-fiber">Fibra Óptica</button>
+                </div>
+            </div>
+
+            <div id="panels-container" class="max-w-5xl mx-auto">
+                
+                <div id="panel-twisted" class="content-panel">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                        <div class="space-y-4">
+                            <div class="cable-viz">
+                                 <div class="w-full h-24 p-2 stp-viz-shield rounded-md flex flex-col justify-around bg-slate-300">
+                                    <div class="w-full h-3 rounded utp-viz-line opacity-80"></div>
+                                    <div class="w-full h-3 rounded bg-blue-500"></div>
+                                    <div class="w-full h-3 rounded bg-green-500"></div>
+                                    <div class="w-full h-3 rounded bg-yellow-500"></div>
+                                </div>
+                            </div>
+                            <p class="text-center text-sm text-slate-500">Representação de um cabo Par Trançado (STP), com blindagem externa e pares de fios de cobre.</p>
+                            <img src="cabo_de_rede_par_trancado_cat5_giga_security_caixa_300_metros_1857_1_c7af324397f18ebc841f9725a99ec4c8.webp" alt="Par Trançado" width="300" height="200" title="Par Tramçado">
+                        </div>
+                        <div class="text-left">
+                            <h2 class="text-3xl font-bold text-slate-800 mb-4">Par Trançado (UTP/STP)</h2>
+                            <p class="text-lg text-slate-600 mb-6">O cabo mais comum para redes locais (LANs), equilibra custo e performance. Consiste em pares de fios de cobre trançados para reduzir interferências.</p>
+                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
+                                    <h4 class="font-bold text-green-800">Vantagens</h4>
+                                    <ul class="list-disc list-inside text-green-700 mt-2 text-sm">
+                                        <li>Custo baixo</li>
+                                        <li>Fácil de instalar</li>
+                                        <li>Flexível</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-red-50 border border-red-200 p-4 rounded-lg">
+                                    <h4 class="font-bold text-red-800">Desvantagens</h4>
+                                    <ul class="list-disc list-inside text-red-700 mt-2 text-sm">
+                                        <li>Suscetível a EMI</li>
+                                        <li>Limites de distância (~100m)</li>
+                                        <li>Velocidade inferior à fibra</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="panel-coaxial" class="content-panel">
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                        <div class="space-y-4">
+                            <div class="cable-viz">
+                                <div class="w-full h-24 coaxial-jacket rounded-full flex items-center p-2">
+                                    <div class="w-full h-20 coaxial-shield rounded-full flex items-center p-2">
+                                        <div class="w-full h-12 coaxial-insulator rounded-full flex items-center justify-center p-2">
+                                            <div class="w-full h-4 coaxial-core rounded-full"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-center text-sm text-slate-500">Representação da estrutura de um cabo Coaxial, com seu núcleo, isolante, blindagem e capa externa.</p>
+                            <img src="cabo-coaxial-rg-6-90-75-ohms-telecam-cabos-200500401-caixa-com-100-metros-206d6bf7..jpg" alt="Cabo Coaxial" width="300" height="200" title="Cabo Coaxial">
+                        </div>
+                        <div class="text-left">
+                            <h2 class="text-3xl font-bold text-slate-800 mb-4">Cabo Coaxial</h2>
+                            <p class="text-lg text-slate-600 mb-6">Com um condutor central e blindagem robusta, é ideal para transmissão de vídeo e dados em ambientes com mais ruído.</p>
+                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
+                                    <h4 class="font-bold text-green-800">Vantagens</h4>
+                                    <ul class="list-disc list-inside text-green-700 mt-2 text-sm">
+                                        <li>Boa resistência a ruído (EMI)</li>
+                                        <li>Cobre distâncias maiores que UTP</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-red-50 border border-red-200 p-4 rounded-lg">
+                                    <h4 class="font-bold text-red-800">Desvantagens</h4>
+                                    <ul class="list-disc list-inside text-red-700 mt-2 text-sm">
+                                        <li>Menos flexível</li>
+                                        <li>Instalação mais complexa</li>
+                                        <li>Largura de banda limitada</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="panel-fiber" class="content-panel">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                        <div class="space-y-4">
+                            <div class="cable-viz">
+                                <div class="w-full h-16 bg-gray-800 rounded-full flex items-center p-2">
+                                    <div class="w-full fiber-core rounded-full"></div>
+                                </div>
+                            </div>
+                           <p class="text-center text-sm text-slate-500">Representação de um cabo de Fibra Óptica, transmitindo dados como pulsos de luz através de um núcleo de vidro.</p>
+                            <img src="Fibra-Óptica.jpg" alt="Fibra óptica" width="300" height="200" title="Fibra Óptica">
+                        </div>
+                        <div class="text-left">
+                           <h2 class="text-3xl font-bold text-slate-800 mb-4">Fibra Óptica</h2>
+                           <p class="text-lg text-slate-600 mb-6">Transmite dados como pulsos de luz, oferecendo velocidade, distância e segurança inigualáveis. É a espinha dorsal da internet moderna.</p>
+                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
+                                    <h4 class="font-bold text-green-800">Vantagens</h4>
+                                    <ul class="list-disc list-inside text-green-700 mt-2 text-sm">
+                                        <li>Velocidade altíssima</li>
+                                        <li>Transmissão por longas distâncias</li>
+                                        <li>Imune a interferência (EMI)</li>
+                                        <li>Alta segurança</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-red-50 border border-red-200 p-4 rounded-lg">
+                                    <h4 class="font-bold text-red-800">Desvantagens</h4>
+                                    <ul class="list-disc list-inside text-red-700 mt-2 text-sm">
+                                        <li>Custo elevado</li>
+                                        <li>Frágil e delicado</li>
+                                        <li>Instalação especializada</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chart-section" class="pt-16 md:pt-24 mt-12 md:mt-16 border-t border-slate-200">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">Comparativo Técnico</h2>
+                <p class="max-w-3xl mx-auto text-lg text-slate-600">
+                    Este gráfico compara os tipos de cabo em quatro métricas essenciais. Os valores são representativos para facilitar a comparação visual e a tomada de decisão.
+                </p>
+            </div>
+            <div class="chart-container">
+                <canvas id="cableChart"></canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-button');
+            const panels = document.querySelectorAll('.content-panel');
+
+            function showPanel(targetId) {
+                panels.forEach(panel => {
+                    panel.classList.remove('active');
+                });
+                tabs.forEach(tab => {
+                    tab.classList.remove('active');
+                });
+
+                const targetPanel = document.getElementById(targetId);
+                const targetButton = document.querySelector(`[data-target="${targetId}"]`);
+                if(targetPanel && targetButton) {
+                    targetPanel.classList.add('active');
+                    targetButton.classList.add('active');
+                }
+            }
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    showPanel(tab.dataset.target);
+                });
+            });
+
+            showPanel('panel-twisted');
+
+            const ctx = document.getElementById('cableChart').getContext('2d');
+            const cableChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Custo Relativo', 'Velocidade Máx. (Relativa)', 'Distância Máx. (Relativa)', 'Resistência a EMI'],
+                    datasets: [
+                        {
+                            label: 'Par Trançado (UTP Cat6a)',
+                            data: [35, 70, 20, 40],
+                            backgroundColor: 'rgba(249, 115, 22, 0.7)',
+                            borderColor: 'rgb(249, 115, 22)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Coaxial',
+                            data: [50, 40, 40, 75],
+                            backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                            borderColor: 'rgb(59, 130, 246)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Fibra Óptica (Monomodo)',
+                            data: [85, 100, 100, 100],
+                            backgroundColor: 'rgba(139, 92, 246, 0.7)',
+                            borderColor: 'rgb(139, 92, 246)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%'
+                                }
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                font: {
+                                    size: 14,
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.x !== null) {
+                                        label += context.parsed.x + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
