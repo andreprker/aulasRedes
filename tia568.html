@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padrão TIA/EIA 568 para Cabeamento Estruturado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .image-placeholder {
+            background-color: #ccc;
+            color: #666;
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Padrão TIA/EIA 568 para Cabeamento Estruturado</h1>
+        <p>O <strong>Padrão TIA/EIA 568</strong> (atualmente ANSI/TIA-568) é um conjunto de padrões de telecomunicações da Building Industry Consulting Service International (BICSI) que define os requisitos técnicos para o cabeamento estruturado em edifícios comerciais. Ele foi desenvolvido para padronizar o cabeamento de redes locais (LANs) e garantir a interoperabilidade entre equipamentos de diferentes fabricantes, além de facilitar a instalação, manutenção e expansão das redes.</p>
+
+        ---
+
+        <h2>Histórico e Evolução</h2>
+        <p>O padrão TIA/EIA 568 surgiu inicialmente como EIA/TIA-568 em 1991. Desde então, tem passado por diversas revisões para se adaptar às novas tecnologias e demandas de rede. As versões mais conhecidas incluem:</p>
+        <ul>
+            <li><strong>TIA/EIA-568-A (1995):</strong> A primeira revisão significativa, estabelecendo as bases para o cabeamento de categoria 5.</li>
+            <li><strong>TIA/EIA-568-B (2001):</strong> Dividida em três partes (B.1, B.2, B.3), introduziu o cabeamento de categoria 5e e 6, e abordou cabeamento de fibra óptica.</li>
+            <li><strong>ANSI/TIA-568-C (2009):</strong> Unificou as partes da versão B e incorporou novas categorias de cabeamento, como categoria 6A e 7.</li>
+            <li><strong>ANSI/TIA-568.0-D (2015):</strong> A revisão mais recente, que generaliza os requisitos para cabeamento de telecomunicações em edifícios e introduz o conceito de "cabeamento genérico de telecomunicações".</li>
+        </ul>
+
+        ---
+
+        <h2>Componentes do Padrão</h2>
+        <p>O TIA/EIA 568 abrange diversos aspectos do cabeamento estruturado, incluindo:</p>
+        <ul class="concept-list">
+            <li><strong>Topologia Estrela:</strong> Recomenda uma topologia em estrela para a distribuição do cabeamento, com todos os cabos se originando de um ponto central (sala de telecomunicações).</li>
+            <li><strong>Tipos de Cabo:</strong> Define os tipos de cabos a serem usados, como par trançado não blindado (UTP) Categorias 3, 5e, 6, 6A, e cabos de fibra óptica multimodo e monomodo.</li>
+            <li><strong>Distâncias Máximas:</strong> Especifica as distâncias máximas permitidas para os segmentos de cabo para garantir o desempenho adequado. Por exemplo, para cabos UTP de cobre, o limite é geralmente 100 metros (90m de canal permanente + 10m de patch cords).</li>
+            <li><strong>Conectores:</strong> Padroniza os tipos de conectores, como o RJ-45 para cabos de cobre e conectores SC, LC para fibra óptica.</li>
+            <li><strong>Terminação (Pinagem):</strong> Este é um dos aspectos mais conhecidos do padrão. Ele define a ordem dos fios dentro do conector RJ-45 para cabos de par trançado. Existem duas pinagens principais: <strong>T568A</strong> e <strong>T568B</strong>.</li>
+        </ul>
+
+        ---
+
+        <h2>Pinagens T568A e T568B</h2>
+        <p>As pinagens T568A e T568B são sequências de cores de fios que são usadas para terminar cabos de rede (par trançado) em conectores RJ-45.</p>
+        <div class="section-highlight">
+            <h3>T568A</h3>
+            <p>A sequência de cores para T568A é:</p>
+            <ol>
+                <li>Branco-Verde</li>
+                <li>Verde</li>
+                <li>Branco-Laranja</li>
+                <li>Azul</li>
+                <li>Branco-Azul</li>
+                <li>Laranja</li>
+                <li>Branco-Marrom</li>
+                <li>Marrom</li>
+            </ol>
+            <div class="code-example">
+                <!-- TIA/EIA 568A Diagram -->
+                <span>[Esquema de cores T568A para conector RJ-45]</span><br>
+                <span>&nbsp;&nbsp;1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8</span><br>
+                <span>&nbsp;WB&nbsp;G&nbsp;WO&nbsp;B&nbsp;WB&nbsp;O&nbsp;WBr&nbsp;Br</span><br>
+                <span>(White-Green, Green, White-Orange, Blue, White-Blue, Orange, White-Brown, Brown)</span>
+            </div>
+        </div>
+
+        <div class="section-highlight">
+            <h3>T568B</h3>
+            <p>A sequência de cores para T568B é:</p>
+            <ol>
+                <li>Branco-Laranja</li>
+                <li>Laranja</li>
+                <li>Branco-Verde</li>
+                <li>Azul</li>
+                <li>Branco-Azul</li>
+                <li>Verde</li>
+                <li>Branco-Marrom</li>
+                <li>Marrom</li>
+            </ol>
+            <div class="code-example">
+                <!-- TIA/EIA 568B Diagram -->
+                <span>[Esquema de cores T568B para conector RJ-45]</span><br>
+                <span>&nbsp;&nbsp;1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8</span><br>
+                <span>&nbsp;WO&nbsp;O&nbsp;WG&nbsp;B&nbsp;WB&nbsp;G&nbsp;WBr&nbsp;Br</span><br>
+                <span>(White-Orange, Orange, White-Green, Blue, White-Blue, Green, White-Brown, Brown)</span>
+            </div>
+        </div>
+
+        <p>A principal diferença é a troca dos pares laranja e verde. Em uma instalação de rede, é crucial usar <strong>apenas uma das pinagens (T568A ou T568B) de forma consistente em todo o sistema</strong> para garantir a compatibilidade e o correto funcionamento da rede.</p>
+        <p><strong>Cabo Direto (Straight-Through):</strong> Ambas as extremidades do cabo usam a mesma pinagem (T568A em ambas as pontas, ou T568B em ambas as pontas). Usado para conectar dispositivos diferentes (ex: computador a switch/hub, roteador a switch).</p>
+        <p><strong>Cabo Crossover (Cross-Over):</strong> Uma extremidade usa T568A e a outra usa T568B. Usado para conectar dispositivos iguais (ex: computador a computador, switch a switch, roteador a roteador).</p>
+        <div class="image-placeholder">
+            [Diagrama comparativo das pinagens T568A e T568B]
+        </div>
+
+        ---
+
+        <h2>Importância e Aplicações</h2>
+        <p>O padrão TIA/EIA 568 é fundamental para:</p>
+        <ul>
+            <li><strong>Garantir a Compatibilidade:</strong> Assegura que equipamentos de rede de diferentes fabricantes funcionem juntos.</li>
+            <li><strong>Padronização da Infraestrutura:</strong> Facilita a instalação e manutenção do cabeamento.</li>
+            <li><strong>Desempenho Otimizado:</strong> Define os requisitos para garantir que o cabeamento suporte as velocidades de rede esperadas (por exemplo, Gigabit Ethernet, 10 Gigabit Ethernet).</li>
+            <li><strong>Solução de Problemas:</strong> Ao seguir um padrão, a identificação e resolução de problemas se tornam mais fáceis.</li>
+        </ul>
+        <p>É amplamente utilizado em ambientes comerciais, data centers, campi universitários e praticamente qualquer instalação que exija uma infraestrutura de rede robusta e confiável.</p>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>O padrão TIA/EIA 568 é a base para o cabeamento estruturado moderno, fornecendo as diretrizes essenciais para projetar, instalar e manter redes de computadores eficientes e confiáveis. Ao aderir a este padrão, os profissionais de rede garantem a longevidade, a flexibilidade e o desempenho de suas infraestruturas.</p>
+    </div>
+</body>
+</html>

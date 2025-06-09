@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabo Direto (Straight-Through): Conectando PC a Switch com T568B</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul, ol {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ol {
+            list-style: decimal;
+        }
+        ul li, ol li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .wire-colors {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        .wire-colors div {
+            width: 40px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            border: 1px solid #ccc;
+            margin: 2px;
+            position: relative;
+        }
+        .wire-colors div span {
+            font-size: 0.7em;
+            margin-top: 5px;
+        }
+        .wire-colors .pin-number {
+            position: absolute;
+            top: 5px;
+            font-size: 0.8em;
+            color: #666;
+        }
+        /* Specific colors for visual representation */
+        .color-WO { background-color: #FFDAB9; } /* White-Orange */
+        .color-O { background-color: #FFA500; }  /* Orange */
+        .color-WG { background-color: #90EE90; }  /* White-Green */
+        .color-G { background-color: #008000; }   /* Green */
+        .color-WB { background-color: #ADD8E6; }  /* White-Blue */
+        .color-B { background-color: #0000FF; }   /* Blue */
+        .color-WBr { background-color: #D2B48C; } /* White-Brown */
+        .color-Br { background-color: #A52A2A; }  /* Brown */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cabo Direto (Straight-Through): Conectando PC a Switch com T568B</h1>
+        <p>No universo das redes de computadores, o <strong>Cabo Direto (Straight-Through Cable)</strong> é o tipo mais comum de cabo Ethernet. Ele é usado para conectar dispositivos de rede diferentes, como um computador a um switch, ou um roteador a um hub. A padronização de suas extremidades é crucial para que a comunicação ocorra sem problemas, e o padrão <strong>T568B</strong> é a pinagem mais amplamente adotada para este fim.</p>
+
+        ---
+
+        <h2>O que é um Cabo Direto?</h2>
+        <p>Um cabo direto é um cabo de par trançado onde a ordem dos fios em ambas as extremidades é idêntica. Isso significa que o fio que está no Pino 1 em uma ponta do conector RJ-45 também está no Pino 1 na outra ponta, e assim por diante para todos os 8 pinos.</p>
+        <p>Ele é chamado de "direto" porque os sinais de transmissão (TX) em uma ponta se conectam aos sinais de recepção (RX) na outra, e vice-versa, permitindo que dispositivos de diferentes funções se comuniquem.</p>
+
+        ---
+
+        <h2>Padrão T568B: A Pinagem para Cabos Diretos</h2>
+        <p>O padrão T568B é o mais utilizado globalmente para a criação de cabos diretos. Ele define uma sequência específica de cores para os 8 fios dentro de um cabo de par trançado, que são inseridos nos pinos do conector RJ-45.</p>
+
+        <div class="section-highlight">
+            <h3>Sequência de Cores T568B (Pinos 1 ao 8)</h3>
+            <p>Vista de frente do conector RJ-45 (com a trava para baixo):</p>
+            <ol>
+                <li><strong>Pino 1:</strong> Branco-Laranja</li>
+                <li><strong>Pino 2:</strong> Laranja</li>
+                <li><strong>Pino 3:</strong> Branco-Verde</li>
+                <li><strong>Pino 4:</strong> Azul</li>
+                <li><strong>Pino 5:</strong> Branco-Azul</li>
+                <li><strong>Pino 6:</strong> Verde</li>
+                <li><strong>Pino 7:</strong> Branco-Marrom</li>
+                <li><strong>Pino 8:</strong> Marrom</li>
+            </ol>
+            <div class="wire-colors">
+                <div class="color-WO"><span class="pin-number">1</span>Branco-Laranja</div>
+                <div class="color-O"><span class="pin-number">2</span>Laranja</div>
+                <div class="color-WG"><span class="pin-number">3</span>Branco-Verde</div>
+                <div class="color-B"><span class="pin-number">4</span>Azul</div>
+                <div class="color-WB"><span class="pin-number">5</span>Branco-Azul</div>
+                <div class="color-G"><span class="pin-number">6</span>Verde</div>
+                <div class="color-WBr"><span class="pin-number">7</span>Branco-Marrom</div>
+                <div class="color-Br"><span class="pin-number">8</span>Marrom</div>
+            </div>
+            <p>Neste padrão, os pares <strong>Laranja (Pinos 1,2)</strong> e <strong>Verde (Pinos 3,6)</strong> são usados para transmissão e recepção de dados em redes 10/100BASE-T Ethernet. Os pares Azul (Pinos 4,5) e Marrom (Pinos 7,8) são usados para transmissão bidirecional em Gigabit Ethernet.</p>
+        </div>
+
+        ---
+
+        <h2>Conectando PC a Switch com Cabo Direto T568B</h2>
+        <p>A conexão mais comum para um Cabo Direto usando o padrão T568B é entre um <strong>Computador (PC)</strong> e um <strong>Switch de Rede</strong>. Ambos os dispositivos possuem interfaces que esperam receber e transmitir dados em pinos específicos, e o cabo direto garante que os pinos de transmissão de um dispositivo se conectem aos pinos de recepção do outro, e vice-versa.</p>
+
+        <p>Quando você conecta um PC a um switch usando um cabo direto T568B:</p>
+        <ul>
+            <li>Os pinos de transmissão (TX) da placa de rede do PC (normalmente 1 e 2) se conectam aos pinos de recepção (RX) da porta do switch (normalmente 3 e 6).</li>
+            <li>Os pinos de recepção (RX) da placa de rede do PC (normalmente 3 e 6) se conectam aos pinos de transmissão (TX) da porta do switch (normalmente 1 e 2).</li>
+            <li>Os demais pares (Azul e Marrom) são usados para as velocidades mais altas (Gigabit Ethernet e acima), mantendo a integridade do sinal.</li>
+        </ul>
+        <div class="image-placeholder">
+            [Diagrama mostrando a conexão de um PC a um Switch com um Cabo Direto T568B, com os pares TX/RX ilustrados]
+        </div>
+
+        ---
+
+        <h2>Importância e Consistência</h2>
+        <p>A escolha e a correta crimpagem de um Cabo Direto T568B são fundamentais para o bom funcionamento da sua rede doméstica ou corporativa. Erros na pinagem podem resultar em:</p>
+        <ul>
+            <li>Ausência de conectividade de rede.</li>
+            <li>Conectividade intermitente.</li>
+            <li>Baixo desempenho ou alta taxa de erros.</li>
+        </ul>
+        <p>É vital que ambas as extremidades do cabo sigam <strong>exatamente a mesma sequência T568B</strong>. Misturar os padrões (T568A em uma ponta e T568B na outra) criaria um cabo crossover, que é usado para propósitos diferentes e não funcionaria corretamente para a maioria das conexões PC-Switch modernas (embora muitos dispositivos modernos tenham "Auto MDI-X" e possam corrigir isso automaticamente, é sempre melhor seguir o padrão correto).</p>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>O <strong>Cabo Direto (Straight-Through)</strong> terminado com o padrão <strong>T568B</strong> é o tipo de cabo de rede mais comum e essencial para a maioria das conexões em redes locais, como a ligação entre um computador e um switch. Compreender a sequência de cores e a lógica por trás dela garante que você possa instalar e manter infraestruturas de rede eficientes e confiáveis.</p>
+    </div>
+</body>
+</html>

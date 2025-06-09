@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação T568A vs. T568B em Cabeamento de Rede</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul, ol {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ol {
+            list-style: decimal;
+        }
+        ul li, ol li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .wire-colors {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        .wire-colors div {
+            width: 40px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            border: 1px solid #ccc;
+            margin: 2px;
+            position: relative;
+        }
+        .wire-colors div span {
+            font-size: 0.7em;
+            margin-top: 5px;
+        }
+        .wire-colors .pin-number {
+            position: absolute;
+            top: 5px;
+            font-size: 0.8em;
+            color: #666;
+        }
+        /* Specific colors for visual representation */
+        .color-WO { background-color: #FFDAB9; } /* White-Orange */
+        .color-O { background-color: #FFA500; }  /* Orange */
+        .color-WG { background-color: #90EE90; }  /* White-Green */
+        .color-G { background-color: #008000; }   /* Green */
+        .color-WB { background-color: #ADD8E6; }  /* White-Blue */
+        .color-B { background-color: #0000FF; }   /* Blue */
+        .color-WBr { background-color: #D2B48C; } /* White-Brown */
+        .color-Br { background-color: #A52A2A; }  /* Brown */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparação T568A vs. T568B em Cabeamento de Rede</h1>
+        <p>No cabeamento estruturado de redes de computadores, dois padrões de pinagem são amplamente utilizados para conectar cabos de par trançado (como o Cat5e, Cat6, Cat6A) a conectores RJ-45: o <strong>TIA/EIA 568A</strong> e o <strong>TIA/EIA 568B</strong>. Embora ambos sejam válidos e garantam a funcionalidade da rede, eles diferem na sequência de cores dos fios, especialmente na troca dos pares laranja e verde. Compreender essa diferença é fundamental para a instalação e manutenção corretas de redes.</p>
+
+        ---
+
+        <h2>Padrão T568A</h2>
+        <p>O padrão T568A é frequentemente recomendado para novas instalações governamentais nos EUA e é valorizado por sua compatibilidade com sistemas telefônicos mais antigos. A sequência de cores para os 8 pinos do conector RJ-45 (vista de frente, com a trava para baixo) é a seguinte:</p>
+
+        <div class="section-highlight">
+            <h3>Sequência de Cores T568A (Pinos 1 ao 8)</h3>
+            <ol>
+                <li><strong>Pino 1:</strong> Branco-Verde</li>
+                <li><strong>Pino 2:</strong> Verde</li>
+                <li><strong>Pino 3:</strong> Branco-Laranja</li>
+                <li><strong>Pino 4:</strong> Azul</li>
+                <li><strong>Pino 5:</strong> Branco-Azul</li>
+                <li><strong>Pino 6:</strong> Laranja</li>
+                <li><strong>Pino 7:</strong> Branco-Marrom</li>
+                <li><strong>Pino 8:</strong> Marrom</li>
+            </ol>
+            <div class="wire-colors">
+                <div class="color-WG"><span class="pin-number">1</span>Branco-Verde</div>
+                <div class="color-G"><span class="pin-number">2</span>Verde</div>
+                <div class="color-WO"><span class="pin-number">3</span>Branco-Laranja</div>
+                <div class="color-B"><span class="pin-number">4</span>Azul</div>
+                <div class="color-WB"><span class="pin-number">5</span>Branco-Azul</div>
+                <div class="color-O"><span class="pin-number">6</span>Laranja</div>
+                <div class="color-WBr"><span class="pin-number">7</span>Branco-Marrom</div>
+                <div class="color-Br"><span class="pin-number">8</span>Marrom</div>
+            </div>
+            <p>Os pares que transmitem dados (Tx) em Gigabit Ethernet são Verde (Pinos 1,2) e Laranja (Pinos 3,6). Os pares que recebem dados (Rx) são Azul (Pinos 4,5) e Marrom (Pinos 7,8).</p>
+        </div>
+
+        ---
+
+        <h2>Padrão T568B</h2>
+        <p>O padrão T568B é o mais amplamente adotado em instalações comerciais e residenciais na maioria das regiões do mundo. Ele é considerado o padrão "default" por muitos profissionais de rede. A sequência de cores é:</p>
+
+        <div class="section-highlight">
+            <h3>Sequência de Cores T568B (Pinos 1 ao 8)</h3>
+            <ol>
+                <li><strong>Pino 1:</strong> Branco-Laranja</li>
+                <li><strong>Pino 2:</strong> Laranja</li>
+                <li><strong>Pino 3:</strong> Branco-Verde</li>
+                <li><strong>Pino 4:</strong> Azul</li>
+                <li><strong>Pino 5:</strong> Branco-Azul</li>
+                <li><strong>Pino 6:</strong> Verde</li>
+                <li><strong>Pino 7:</strong> Branco-Marrom</li>
+                <li><strong>Pino 8:</strong> Marrom</li>
+            </ol>
+            <div class="wire-colors">
+                <div class="color-WO"><span class="pin-number">1</span>Branco-Laranja</div>
+                <div class="color-O"><span class="pin-number">2</span>Laranja</div>
+                <div class="color-WG"><span class="pin-number">3</span>Branco-Verde</div>
+                <div class="color-B"><span class="pin-number">4</span>Azul</div>
+                <div class="color-WB"><span class="pin-number">5</span>Branco-Azul</div>
+                <div class="color-G"><span class="pin-number">6</span>Verde</div>
+                <div class="color-WBr"><span class="pin-number">7</span>Branco-Marrom</div>
+                <div class="color-Br"><span class="pin-number">8</span>Marrom</div>
+            </div>
+            <p>Neste padrão, os pares que transmitem dados (Tx) em Gigabit Ethernet são Laranja (Pinos 1,2) e Verde (Pinos 3,6). Os pares que recebem dados (Rx) são Azul (Pinos 4,5) e Marrom (Pinos 7,8).</p>
+        </div>
+
+        ---
+
+        <h2>A Diferença Principal: Troca dos Pares Laranja e Verde</h2>
+        <p>A distinção crucial entre T568A e T568B reside na posição dos pares de fios <strong>Laranja</strong> e <strong>Verde</strong>. Observe a tabela comparativa abaixo:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Pino</th>
+                    <th>Cor (T568A)</th>
+                    <th>Cor (T568B)</th>
+                    <th>Função (10/100BASE-T Ethernet)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Branco-Verde</td>
+                    <td>Branco-Laranja</td>
+                    <td>TX+ (Transmissão)</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Verde</td>
+                    <td>Laranja</td>
+                    <td>TX- (Transmissão)</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Branco-Laranja</td>
+                    <td>Branco-Verde</td>
+                    <td>RX+ (Recepção)</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Azul</td>
+                    <td>Azul</td>
+                    <td>Não usado / Bi-direcional para Gigabit</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Branco-Azul</td>
+                    <td>Branco-Azul</td>
+                    <td>Não usado / Bi-direcional para Gigabit</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Laranja</td>
+                    <td>Verde</td>
+                    <td>RX- (Recepção)</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Branco-Marrom</td>
+                    <td>Branco-Marrom</td>
+                    <td>Não usado / Bi-direcional para Gigabit</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Marrom</td>
+                    <td>Marrom</td>
+                    <td>Não usado / Bi-direcional para Gigabit</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Os pares Azul e Marrom permanecem nas mesmas posições em ambos os padrões. A diferença está nos pares que carregam os dados de transmissão e recepção em redes Ethernet mais antigas (10/100BASE-T), que utilizam apenas dois pares para transmissão e dois para recepção.</p>
+
+        ---
+
+        <h2>Aplicação dos Padrões</h2>
+        <p>A escolha entre T568A e T568B impacta diretamente o tipo de cabo de rede que será criado:</p>
+        <ul>
+            <li><strong>Cabo Direto (Straight-Through Cable):</strong>
+                <ul>
+                    <li>Ambas as extremidades do cabo são terminadas usando o <strong>mesmo padrão de pinagem</strong> (ambas T568A ou ambas T568B).</li>
+                    <li>Este é o tipo de cabo mais comum, usado para conectar dispositivos diferentes, como:
+                        <ul>
+                            <li>Computador a Switch/Hub</li>
+                            <li>Roteador a Switch/Hub</li>
+                            <li>Switch a Roteador</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Cabo Crossover (Cross-Over Cable):</strong>
+                <ul>
+                    <li>Uma extremidade do cabo é terminada com o padrão <strong>T568A</strong> e a outra extremidade com o padrão <strong>T568B</strong>.</li>
+                    <li>Esses cabos "cruzam" os pares de transmissão (TX) e recepção (RX), permitindo a comunicação direta entre dispositivos iguais, como:
+                        <ul>
+                            <li>Computador a Computador</li>
+                            <li>Switch a Switch (porta normal)</li>
+                            <li>Roteador a Roteador</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        [Imagem comparativa de um cabo Straight-Through e um cabo Crossover, mostrando as pinagens em cada extremidade]
+
+        ---
+
+        <h2>Importância da Consistência</h2>
+        <p>Apesar da existência de dois padrões, o mais importante em qualquer instalação de rede é a <strong>consistência</strong>. Você deve escolher um padrão (T568A ou T568B) e aplicá-lo uniformemente em todas as terminações de cabos, tomadas e patch panels dentro da sua rede local. Misturar os padrões de forma inconsistente em um cabo direto ou em uma infraestrutura pode resultar em problemas de conectividade, perda de pacotes e falhas na rede.</p>
+        <p>Para instalações Gigabit Ethernet e 10 Gigabit Ethernet (que utilizam todos os quatro pares para transmissão bidirecional), a distinção entre Straight-Through e Crossover é muitas vezes tratada automaticamente pela função Auto MDI-X dos equipamentos de rede. No entanto, o conhecimento das pinagens ainda é crucial para a instalação física e para a depuração de problemas.</p>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>Os padrões T568A e T568B são as duas principais formas de organizar os fios em um conector RJ-45 para cabeamento de rede. A diferença fundamental reside na troca das posições dos pares Laranja e Verde. Compreender essa distinção e, mais importante, garantir a consistência na aplicação do padrão escolhido, é essencial para a criação de redes confiáveis, eficientes e interoperáveis.</p>
+    </div>
+</body>
+</html>

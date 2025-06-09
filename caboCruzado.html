@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabo Cruzado (Cross-Over): Conectando PC a PC com T568A/T568B</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul, ol {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ol {
+            list-style: decimal;
+        }
+        ul li, ol li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .wire-colors {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        .wire-colors div {
+            width: 40px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            border: 1px solid #ccc;
+            margin: 2px;
+            position: relative;
+        }
+        .wire-colors div span {
+            font-size: 0.7em;
+            margin-top: 5px;
+        }
+        .wire-colors .pin-number {
+            position: absolute;
+            top: 5px;
+            font-size: 0.8em;
+            color: #666;
+        }
+        /* Specific colors for visual representation */
+        .color-WO { background-color: #FFDAB9; } /* White-Orange */
+        .color-O { background-color: #FFA500; }  /* Orange */
+        .color-WG { background-color: #90EE90; }  /* White-Green */
+        .color-G { background-color: #008000; }   /* Green */
+        .color-WB { background-color: #ADD8E6; }  /* White-Blue */
+        .color-B { background-color: #0000FF; }   /* Blue */
+        .color-WBr { background-color: #D2B48C; } /* White-Brown */
+        .color-Br { background-color: #A52A2A; }  /* Brown */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cabo Cruzado (Cross-Over): Conectando PC a PC com T568A/T568B</h1>
+        <p>No cabeamento de redes Ethernet, a maioria das conexões utiliza cabos diretos (straight-through). No entanto, para conectar dois dispositivos do mesmo tipo diretamente, como dois computadores (PCs) ou dois switches (sem uma porta uplink), é necessário um tipo especial de cabo: o <strong>Cabo Cruzado (Cross-Over Cable)</strong>. Este cabo é caracterizado por ter uma extremidade terminada com o padrão de pinagem <strong>T568A</strong> e a outra com o padrão <strong>T568B</strong>.</p>
+
+        ---
+
+        <h2>O que é um Cabo Cruzado?</h2>
+        <p>Um cabo cruzado é um cabo de par trançado onde a ordem dos fios difere entre as duas extremidades. Especificamente, os pares de fios responsáveis pela transmissão (TX) em uma ponta são "cruzados" para os pinos de recepção (RX) na outra ponta, e vice-versa. Essa "troca" de pares é o que permite que dispositivos do mesmo tipo se comuniquem diretamente, sem a necessidade de um dispositivo intermediário como um hub ou switch.</p>
+        <p>Ele é essencial em cenários onde a função de "cruzamento" de sinais não é realizada por um equipamento de rede.</p>
+
+        ---
+
+        <h2>Padrão T568A: A Primeira Ponta do Cabo Cruzado</h2>
+        <p>Para criar um cabo cruzado, uma das extremidades é crimpada utilizando o padrão T568A. A sequência de cores para os 8 pinos do conector RJ-45 (vista de frente, com a trava para baixo) é a seguinte:</p>
+
+        <div class="section-highlight">
+            <h3>Sequência de Cores T568A (Pinos 1 ao 8)</h3>
+            <ol>
+                <li><strong>Pino 1:</strong> Branco-Verde</li>
+                <li><strong>Pino 2:</strong> Verde</li>
+                <li><strong>Pino 3:</strong> Branco-Laranja</li>
+                <li><strong>Pino 4:</strong> Azul</li>
+                <li><strong>Pino 5:</strong> Branco-Azul</li>
+                <li><strong>Pino 6:</strong> Laranja</li>
+                <li><strong>Pino 7:</strong> Branco-Marrom</li>
+                <li><strong>Pino 8:</strong> Marrom</li>
+            </ol>
+            <div class="wire-colors">
+                <div class="color-WG"><span class="pin-number">1</span>Branco-Verde</div>
+                <div class="color-G"><span class="pin-number">2</span>Verde</div>
+                <div class="color-WO"><span class="pin-number">3</span>Branco-Laranja</div>
+                <div class="color-B"><span class="pin-number">4</span>Azul</div>
+                <div class="color-WB"><span class="pin-number">5</span>Branco-Azul</div>
+                <div class="color-O"><span class="pin-number">6</span>Laranja</div>
+                <div class="color-WBr"><span class="pin-number">7</span>Branco-Marrom</div>
+                <div class="color-Br"><span class="pin-number">8</span>Marrom</div>
+            </div>
+            <p>Neste padrão, os pinos 1 e 2 são para Transmissão (TX), e os pinos 3 e 6 são para Recepção (RX) em redes 10/100BASE-T Ethernet.</p>
+        </div>
+
+        ---
+
+        <h2>Padrão T568B: A Segunda Ponta do Cabo Cruzado</h2>
+        <p>A outra extremidade do cabo cruzado é crimpada utilizando o padrão T568B. A sequência de cores para os 8 pinos do conector RJ-45 (vista de frente, com a trava para baixo) é:</p>
+
+        <div class="section-highlight">
+            <h3>Sequência de Cores T568B (Pinos 1 ao 8)</h3>
+            <ol>
+                <li><strong>Pino 1:</strong> Branco-Laranja</li>
+                <li><strong>Pino 2:</strong> Laranja</li>
+                <li><strong>Pino 3:</strong> Branco-Verde</li>
+                <li><strong>Pino 4:</strong> Azul</li>
+                <li><strong>Pino 5:</strong> Branco-Azul</li>
+                <li><strong>Pino 6:</strong> Verde</li>
+                <li><strong>Pino 7:</strong> Branco-Marrom</li>
+                <li><strong>Pino 8:</strong> Marrom</li>
+            </ol>
+            <div class="wire-colors">
+                <div class="color-WO"><span class="pin-number">1</span>Branco-Laranja</div>
+                <div class="color-O"><span class="pin-number">2</span>Laranja</div>
+                <div class="color-WG"><span class="pin-number">3</span>Branco-Verde</div>
+                <div class="color-B"><span class="pin-number">4</span>Azul</div>
+                <div class="color-WB"><span class="pin-number">5</span>Branco-Azul</div>
+                <div class="color-G"><span class="pin-number">6</span>Verde</div>
+                <div class="color-WBr"><span class="pin-number">7</span>Branco-Marrom</div>
+                <div class="color-Br"><span class="pin-number">8</span>Marrom</div>
+            </div>
+            <p>Neste padrão, os pinos 1 e 2 são para Transmissão (TX), e os pinos 3 e 6 são para Recepção (RX) em redes 10/100BASE-T Ethernet.</p>
+        </div>
+
+        ---
+
+        <h2>Como o Cruzamento Ocorre para PC-PC (10/100BASE-T Ethernet)</h2>
+        <p>A magia do cabo cruzado reside na forma como ele inverte os pares de transmissão e recepção entre as duas pontas. Para uma conexão PC-PC:</p>
+        <ul>
+            <li><strong>Pares de Transmissão (TX) do PC1 (Pinos 1 e 2 - Laranja no T568B)</strong> se conectam aos <strong>Pinos de Recepção (RX) do PC2 (Pinos 3 e 6 - Verde no T568A)</strong>.</li>
+            <li><strong>Pares de Transmissão (TX) do PC2 (Pinos 1 e 2 - Verde no T568A)</strong> se conectam aos <strong>Pinos de Recepção (RX) do PC1 (Pinos 3 e 6 - Laranja no T568B)</strong>.</li>
+            <li>Os outros pares (Azul e Marrom) permanecem na mesma ordem, o que é relevante para Gigabit Ethernet, que usa todos os 8 fios para transmissão bidirecional.</li>
+        </ul>
+        <p>Essa inversão garante que o sinal de transmissão de um computador seja recebido pelo outro, e vice-versa, permitindo a comunicação direta sem um hub ou switch.</p>
+        <div class="image-placeholder">
+            [Diagrama mostrando a conexão de dois PCs com um Cabo Cruzado (T568A em uma ponta, T568B na outra), ilustrando o cruzamento dos pares TX/RX]
+        </div>
+
+        ---
+
+        <h2>Importância e Observações</h2>
+        <ul>
+            <li><strong>Conexões Legadas:</strong> O cabo cruzado é mais relevante para redes 10/100BASE-T Ethernet, onde apenas dois pares são usados para TX e dois para RX.</li>
+            <li><strong>Auto MDI-X:</strong> Muitos dispositivos de rede modernos (PCs, switches Gigabit Ethernet e mais recentes) possuem a função <strong>Auto MDI-X</strong>. Essa função detecta automaticamente o tipo de cabo conectado (direto ou cruzado) e ajusta as portas de rede para que a comunicação funcione corretamente, eliminando a necessidade de usar um cabo cruzado específico para a maioria das conexões PC-PC. No entanto, o conhecimento sobre cabos cruzados ainda é fundamental para diagnóstico de rede, compatibilidade com equipamentos mais antigos e para a certificação de cabeamento.</li>
+            <li><strong>Uso para Switches/Roteadores (antigos):</strong> Além de PC-PC, cabos cruzados também eram usados para conectar diretamente dois switches ou dois roteadores que não possuíam portas "uplink" com Auto MDI-X.</li>
+        </ul>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>O <strong>Cabo Cruzado (Cross-Over)</strong>, com uma extremidade no padrão T568A e a outra no T568B, é uma ferramenta essencial para conectar dois dispositivos do mesmo tipo diretamente, como dois computadores. Apesar de muitos dispositivos modernos terem a capacidade de auto-detecção, compreender a lógica por trás do cruzamento dos pares de fios TX/RX é fundamental para qualquer profissional de rede, garantindo a capacidade de solucionar problemas e trabalhar com uma variedade de equipamentos.</p>
+    </div>
+</body>
+</html>

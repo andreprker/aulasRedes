@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de Cores do Padrão T568B</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul, ol {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ol {
+            list-style: decimal;
+        }
+        ul li, ol li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .image-placeholder {
+            background-color: #ccc;
+            color: #666;
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sequência de Cores do Padrão T568B</h1>
+        <p>No mundo do cabeamento estruturado, a padronização é essencial para a interoperabilidade e o desempenho das redes. O <strong>Padrão TIA/EIA 568</strong> define várias especificações, sendo a ordem dos fios em conectores RJ-45 uma das mais importantes. Existem duas pinagens principais: T568A e T568B.</p>
+        <p>Esta página se aprofundará na sequência de cores do <strong>Padrão T568B</strong>, que é a pinagem mais comumente utilizada para terminar cabos de rede de par trançado em conectores RJ-45.</p>
+
+        ---
+
+        <h2>Entendendo a Pinagem T568B</h2>
+        <p>A pinagem T568B é uma sequência específica de cores para os oito fios de um cabo de par trançado, que são inseridos nos pinos do conector RJ-45. Essa ordem é crucial para garantir que a transmissão de dados ocorra corretamente e que os pares de fios transmitam e recebam sinais de forma eficiente.</p>
+        <p>A sequência de cores é baseada nos pares de fios (Azul/Branco-Azul, Laranja/Branco-Laranja, Verde/Branco-Verde, Marrom/Branco-Marrom) e como eles são dispostos nos oito pinos do conector. Para o T568B, a ordem é a seguinte:</p>
+
+        <div class="section-highlight">
+            <h3>Sequência de Cores T568B (Pinos 1 ao 8)</h3>
+            <ol>
+                <li><strong>Pino 1:</strong> Branco-Laranja</li>
+                <li><strong>Pino 2:</strong> Laranja</li>
+                <li><strong>Pino 3:</strong> Branco-Verde</li>
+                <li><strong>Pino 4:</strong> Azul</li>
+                <li><strong>Pino 5:</strong> Branco-Azul</li>
+                <li><strong>Pino 6:</strong> Verde</li>
+                <li><strong>Pino 7:</strong> Branco-Marrom</li>
+                <li><strong>Pino 8:</strong> Marrom</li>
+            </ol>
+            <div class="code-example">
+                <!-- Representação textual da pinagem T568B -->
+                <span>&nbsp;&nbsp;1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8</span><br>
+                <span>&nbsp;WO&nbsp;O&nbsp;WG&nbsp;B&nbsp;WB&nbsp;G&nbsp;WBr&nbsp;Br</span><br>
+                <span>(Branco-Laranja, Laranja, Branco-Verde, Azul, Branco-Azul, Verde, Branco-Marrom, Marrom)</span>
+            </div>
+        </div>
+
+        ---
+
+        <h2>Aplicação: Cabo Direto (Straight-Through)</h2>
+        <p>O padrão T568B é o mais amplamente adotado em instalações comerciais e residenciais na maioria das regiões. Ele é usado principalmente para criar um <strong>Cabo Direto (Straight-Through)</strong>, onde ambas as extremidades do cabo são terminadas utilizando a mesma pinagem T568B.</p>
+        <p>Este tipo de cabo é o mais comum e é usado para conectar:</p>
+        <ul>
+            <li>Um computador ou dispositivo final (como impressoras de rede) a um switch ou hub.</li>
+            <li>Um roteador a um switch ou hub.</li>
+            <li>Qualquer dispositivo de rede que se conecta a um dispositivo de rede intermediário.</li>
+        </ul>
+        <div class="image-placeholder">
+            [Diagrama de um cabo Straight-Through usando a pinagem T568B em ambas as pontas]
+        </div>
+
+        ---
+
+        <h2>Comparação com T568A e Cabo Crossover</h2>
+        <p>A principal diferença entre T568A e T568B é a troca dos pares de fios laranja e verde. Enquanto T568B tem Branco-Laranja/Laranja nos pinos 1 e 2, e Branco-Verde/Verde nos pinos 3 e 6, o T568A inverte esses pares.</p>
+        <p>Um <strong>Cabo Crossover</strong> é criado quando uma extremidade do cabo é terminada com a pinagem T568A e a outra extremidade com a pinagem T568B. Esses cabos são usados para conectar diretamente dispositivos iguais (ex: computador a computador, switch a switch) sem a necessidade de um hub ou switch intermediário, pois eles "cruzam" os pares de transmissão e recepção.</p>
+        <div class="image-placeholder">
+            [Diagrama comparativo das pinagens T568A e T568B, e como elas formam um cabo crossover]
+        </div>
+
+        ---
+
+        <h2>Importância da Consistência</h2>
+        <p>Em qualquer instalação de rede, a <strong>consistência</strong> na escolha da pinagem é fundamental. Se você optar por usar o T568B (que é a escolha padrão para a maioria das novas instalações), todas as tomadas, patch panels e cabos diretos dentro do mesmo sistema devem seguir essa pinagem para garantir a compatibilidade e o correto funcionamento da rede.</p>
+        <p>Apesar de o T568A ser preferido em algumas aplicações (como instalações governamentais nos EUA), a ampla adoção do T568B faz com que seja crucial que os profissionais de rede o conheçam e o apliquem corretamente.</p>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>A sequência de cores do padrão T568B é um conhecimento essencial no cabeamento estruturado, especialmente porque é a pinagem dominante para cabos diretos na maioria das redes locais. Dominar a aplicação correta do T568B garante que suas instalações de rede sejam eficientes, confiáveis e compatíveis com a vasta maioria dos equipamentos de rede disponíveis no mercado.</p>
+    </div>
+</body>
+</html>

@@ -45,9 +45,6 @@
                     <li><button data-target="lesson-4" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 4: Norma T568A</button></li>
                     <li><button data-target="lesson-5" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 5: Norma T568B</button></li>
                     <li><button data-target="lesson-6" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 6: Cabos Diretos/Cruzados</button></li>
-                    <li><button data-target="lesson-7" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 7: Prática - Preparação</button></li>
-                    <li><button data-target="lesson-8" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 8: Prática - Crimpagem</button></li>
-                    <li><button data-target="lesson-9" class="nav-link w-full text-left px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">Aula 9: Teste e Soluções</button></li>
                 </ul>
             </nav>
         </aside>
@@ -62,9 +59,6 @@
                     <option value="lesson-4">Aula 4: Norma T568A</option>
                     <option value="lesson-5">Aula 5: Norma T568B</option>
                     <option value="lesson-6">Aula 6: Cabos Diretos/Cruzados</option>
-                    <option value="lesson-7">Aula 7: Prática - Preparação</option>
-                    <option value="lesson-8">Aula 8: Prática - Crimpagem</option>
-                    <option value="lesson-9">Aula 9: Teste e Soluções</option>
                 </select>
             </div>
             
@@ -146,9 +140,9 @@
                         <div>
                             <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (15 min)</h4>
                             <ul class="list-disc list-inside space-y-2 text-slate-700">
-                                <li>Introdução às Normas Técnicas (Compatibilidade, Desempenho).</li>
-                                <li>Padrão <code>TIA/EIA 568</code>.</li>
-                                <li>Sequência de Cores do Padrão <code>T568A</code>.</li>
+                                <li><a href="normasTecnicas.html">Introdução às Normas Técnicas (Compatibilidade, Desempenho).</a></li>
+                                <li><a href="tia568.html"> Padrão <code>TIA/EIA 568</code>.</a></li>
+                                <li><a href="coresT568A.html"> Sequência de Cores do Padrão <code>T568A</code>.</a></li>
                             </ul>
                         </div>
                         <div>
@@ -167,9 +161,8 @@
                         <div>
                             <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (15 min)</h4>
                             <ul class="list-disc list-inside space-y-2 text-slate-700">
-                                <li>Revisão rápida do padrão <code>T568A</code>.</li>
-                                <li>Sequência de Cores do Padrão <code>T568B</code>.</li>
-                                <li>Comparação <code>T568A</code> vs. <code>T568B</code> (troca dos pares Laranja e Verde).</li>
+                                <li><a href="coresT568B.html">Sequência de Cores do Padrão <code>T568B</code>.</a></li>
+                                <li><a href="comparacaoAB.html">Comparação <code>T568A</code> vs. <code>T568B</code> (troca dos pares Laranja e Verde).</a></li>
                             </ul>
                         </div>
                         <div>
@@ -188,9 +181,9 @@
                         <div>
                             <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (15 min)</h4>
                             <ul class="list-disc list-inside space-y-2 text-slate-700">
-                                <li>Cabo Direto (<code>T568B</code> em ambas as pontas) para conectar <code>PC-Switch</code>.</li>
-                                <li>Cabo Cruzado (<code>T568A</code> em uma ponta, <code>T568B</code> na outra) para conectar <code>PC-PC</code>.</li>
-                                <li>Auto MDI/MDI-X em equipamentos modernos.</li>
+                                <li><a href="caboDireto.html">Cabo Direto (<code>T568B</code> em ambas as pontas) para conectar <code>PC-Switch</code>.</a></li>
+                                <li><a href="caboCruzado.html">Cabo Cruzado (<code>T568A</code> em uma ponta, <code>T568B</code> na outra) para conectar <code>PC-PC</code>.</a></li>
+                                <li><a href="autoMDI.html">Auto MDI/MDI-X em equipamentos modernos.</a></li>
                             </ul>
                         </div>
                         <div>
@@ -201,70 +194,7 @@
                 </article>
             </div>
             
-            <div id="lesson-7" class="lesson-content space-y-6">
-                <article class="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Aula 7: Procedimento de Crimpagem - Parte 1 (Preparação)</h3>
-                    <p class="mb-4 text-slate-600">Aula focada nos primeiros passos práticos da crimpagem: decapagem correta da jaqueta e organização precisa dos fios na sequência T568B.</p>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (10 min)</h4>
-                            <ul class="list-disc list-inside space-y-2 text-slate-700">
-                                <li>Revisão do Padrão <code>T568B</code>.</li>
-                                <li>Passos detalhados da preparação: Corte, Decapagem e Alinhamento.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Atividade Prática (30 min)</h4>
-                            <p class="text-slate-700">Os alunos irão praticar a preparação de várias pontas de cabo, focando em conseguir uma decapagem limpa e um alinhamento perfeito dos fios na norma T568B.</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            
-            <div id="lesson-8" class="lesson-content space-y-6">
-                <article class="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Aula 8: Procedimento de Crimpagem - Parte 2 (Inserção e Crimpagem)</h3>
-                    <p class="mb-4 text-slate-600">Nesta aula, os alunos irão finalizar a montagem de uma ponta do cabo, aprendendo a inserir os fios no conector RJ45 e a usar o alicate para a crimpagem final.</p>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (10 min)</h4>
-                            <ul class="list-disc list-inside space-y-2 text-slate-700">
-                                <li>Corte dos fios na medida certa.</li>
-                                <li>Técnica de inserção dos fios no conector <code>RJ45</code>.</li>
-                                <li>Verificação visual antes de crimpar.</li>
-                                <li>Uso correto do alicate de crimpagem.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Atividade Prática (30 min)</h4>
-                            <p class="text-slate-700">Utilizando os cabos preparados na aula anterior, os alunos irão cortar, inserir e crimpar os conectores RJ45, repetindo o processo para ganhar prática.</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            
-            <div id="lesson-9" class="lesson-content space-y-6">
-                <article class="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Aula 9: Teste de Cabos e Solução de Problemas Comuns</h3>
-                    <p class="mb-4 text-slate-600">A aula final foca em garantir a qualidade do trabalho, ensinando a testar os cabos crimpados e a diagnosticar os problemas mais comuns.</p>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Conteúdo Programático (15 min)</h4>
-                            <ul class="list-disc list-inside space-y-2 text-slate-700">
-                                <li>Como usar o Testador de Cabos (Lan Tester).</li>
-                                <li>Problemas Comuns: Fio Aberto, Curto-Circuito, Fio Invertido.</li>
-                                <li>Como interpretar os LEDs do testador.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-lg text-slate-800 mb-2">Atividade Prática (25 min)</h4>
-                            <p class="text-slate-700">Os alunos irão testar os cabos que montaram. O professor fornecerá cabos com falhas intencionais para que os alunos possam praticar o diagnóstico.</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </main>
-    </div>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

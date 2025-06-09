@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de Cores do Padrão T568A</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .section-highlight {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        ul, ol {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        ol {
+            list-style: decimal;
+        }
+        ul li, ol li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .code-example {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .image-placeholder {
+            background-color: #ccc;
+            color: #666;
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sequência de Cores do Padrão T568A</h1>
+        <p>No universo do cabeamento estruturado, a padronização é fundamental para garantir a compatibilidade e o desempenho das redes. O <strong>Padrão TIA/EIA 568</strong> define diversas especificações, e uma das mais cruciais é a ordem dos fios dentro do conector RJ-45. Existem duas pinagens principais: T568A e T568B.</p>
+        <p>Esta página se aprofundará na sequência de cores do <strong>Padrão T568A</strong>, uma das formas de terminar cabos de rede de par trançado em conectores RJ-45.</p>
+
+        ---
+
+        <h2>Entendendo a Pinagem T568A</h2>
+        <p>A pinagem T568A é uma sequência específica de cores para os oito fios dentro de um cabo de par trançado, que são inseridos nos pinos do conector RJ-45. Essa ordem é crucial para que a transmissão de dados ocorra corretamente.</p>
+        <p>A sequência de cores é baseada nos pares de fios (Azul/Branco-Azul, Laranja/Branco-Laranja, Verde/Branco-Verde, Marrom/Branco-Marrom) e como eles são dispostos nos oito pinos do conector. Para o T568A, a ordem é a seguinte:</p>
+
+        <div class="section-highlight">
+            <h3>Sequência de Cores T568A (Pinos 1 ao 8)</h3>
+            <ol>
+                <li><strong>Pino 1:</strong> Branco-Verde</li>
+                <li><strong>Pino 2:</strong> Verde</li>
+                <li><strong>Pino 3:</strong> Branco-Laranja</li>
+                <li><strong>Pino 4:</strong> Azul</li>
+                <li><strong>Pino 5:</strong> Branco-Azul</li>
+                <li><strong>Pino 6:</strong> Laranja</li>
+                <li><strong>Pino 7:</strong> Branco-Marrom</li>
+                <li><strong>Pino 8:</strong> Marrom</li>
+            </ol>
+            <div class="code-example">
+                <!-- Representação textual da pinagem T568A -->
+                <span>&nbsp;&nbsp;1&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;6&nbsp;&nbsp;7&nbsp;&nbsp;8</span><br>
+                <span>&nbsp;WB&nbsp;G&nbsp;WO&nbsp;B&nbsp;WB&nbsp;O&nbsp;WBr&nbsp;Br</span><br>
+                <span>(Branco-Verde, Verde, Branco-Laranja, Azul, Branco-Azul, Laranja, Branco-Marrom, Marrom)</span>
+            </div>
+        </div>
+
+        ---
+
+        <h2>Aplicação: Cabo Direto (Straight-Through)</h2>
+        <p>O padrão T568A é tipicamente utilizado em conjunto com o padrão T568B para criar cabos do tipo <strong>Crossover</strong> (uma ponta A e outra B, usados para conectar dispositivos iguais). No entanto, o T568A também pode ser usado sozinho para criar um <strong>Cabo Direto (Straight-Through)</strong>.</p>
+        <p>Para um cabo direto, ambas as extremidades do cabo devem ser terminadas utilizando a mesma pinagem. Se você optar por usar o T568A, então ambos os conectores RJ-45 (em cada ponta do cabo) deverão seguir a sequência de cores T568A. Este tipo de cabo é o mais comum e é usado para conectar:</p>
+        <ul>
+            <li>Um computador a um switch ou hub.</li>
+            <li>Um roteador a um switch ou hub.</li>
+            <li>Qualquer dispositivo final (como impressoras de rede) a um dispositivo de rede intermediário.</li>
+        </ul>
+        <div class="image-placeholder">
+            [Diagrama de um cabo Straight-Through usando a pinagem T568A em ambas as pontas]
+        </div>
+
+        ---
+
+        <h2>Importância da Consistência</h2>
+        <p>Independentemente de qual pinagem (T568A ou T568B) seja escolhida para uma instalação, o mais importante é manter a <strong>consistência</strong>. Todas as tomadas, patch panels e cabos diretos em uma mesma instalação devem seguir o mesmo padrão de pinagem para evitar problemas de conectividade e garantir o funcionamento correto da rede.</p>
+        <p>Embora T568B seja mais comum em muitas regiões, T568A é o padrão preferido para instalações governamentais nos EUA e é igualmente válido para qualquer instalação de rede.</p>
+
+        ---
+
+        <h2>Conclusão</h2>
+        <p>A sequência de cores do padrão T568A é uma parte essencial do cabeamento estruturado, fornecendo uma ordem clara para a terminação de cabos de rede. Compreender e aplicar essa pinagem corretamente é crucial para profissionais de redes, garantindo que a infraestrutura de comunicação seja robusta, confiável e compatível com os equipamentos de rede.</p>
+    </div>
+</body>
+</html>
