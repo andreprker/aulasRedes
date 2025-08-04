@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes Físicos de uma Rede</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: A single-page, vertical scrolling layout with a fixed top navigation bar for quick jumps between thematic sections. The core of the application is an interactive diagram where clicking a component scrolls to and highlights its detailed description. This structure was chosen to provide both a linear reading path and a non-linear, exploratory experience, which is more engaging for learning. A comparison chart is included to synthesize key differences between devices. -->
+    <!-- Visualization & Content Choices: Report Info (Hub, Switch, Router differences) -> Goal (Compare) -> Viz (Horizontal Bar Chart) -> Interaction (Tooltips on hover) -> Justification (Quick visual differentiation of device capabilities) -> Library (Chart.js). Report Info (Overall network structure) -> Goal (Organize/Relate) -> Viz (HTML/CSS Diagram) -> Interaction (Click to scroll and highlight) -> Justification (Visualizes connections and provides an engaging navigation method) -> Method (HTML/CSS/JS). -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfaf6;
+            color: #4a4a4a;
+        }
+        .highlight {
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 0 3px #fb923c;
+            transform: scale(1.01);
+        }
+        .diagram-line {
+            position: absolute;
+            background-color: #cbd5e1;
+            z-index: 0;
+        }
+        .diagram-item {
+            z-index: 10;
+            transition: all 0.2s ease-in-out;
+        }
+        .diagram-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-30 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-orange-500">Redes Físicas</h1>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#section-finais" class="text-gray-600 hover:text-orange-500 transition">Dispositivos Finais</a>
+                <a href="#section-meios" class="text-gray-600 hover:text-orange-500 transition">Meios</a>
+                <a href="#section-interconexao" class="text-gray-600 hover:text-orange-500 transition">Interconexão</a>
+                <a href="#section-nic" class="text-gray-600 hover:text-orange-500 transition">Placa de Rede</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">Explorando os Componentes Físicos de uma Rede</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600">
+                Os componentes físicos, ou hardware, são a espinha dorsal de qualquer rede de computadores. Eles são os elementos tangíveis que conectam tudo e permitem que os dados fluam. Vamos mergulhar nos blocos de construção essenciais de uma rede.
+            </p>
+        </section>
+
+        <section id="section-diagrama" class="mb-20 bg-slate-50 p-8 rounded-2xl shadow-inner">
+            <h3 class="text-2xl font-bold text-center text-gray-800 mb-2">Diagrama Interativo da Rede</h3>
+            <p class="text-center text-gray-500 mb-10">Clique em um componente para ver seus detalhes abaixo.</p>
+            <div class="relative w-full max-w-4xl mx-auto h-96 md:h-[450px] flex items-center justify-center">
+                <div class="diagram-line" style="width: 2px; height: 100px; top: 100px; left: 50%;"></div>
+                <div class="diagram-line" style="width: 40%; height: 2px; top: 200px; left: 30%;"></div>
+                <div class="diagram-line" style="width: 2px; height: 60px; top: 200px; left: 30%;"></div>
+                <div class="diagram-line" style="width: 2px; height: 60px; top: 200px; left: 70%;"></div>
+                
+                <div id="diagram-router" data-target="card-roteador" class="diagram-item absolute top-0 left-1/2 -translate-x-1/2 cursor-pointer bg-white p-4 rounded-lg shadow-md flex flex-col items-center w-32 text-center">
+                    <span class="text-3xl">🌐</span>
+                    <span class="font-bold text-sm mt-1">Roteador</span>
+                </div>
+                
+                <div id="diagram-switch" data-target="card-switch" class="diagram-item absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 cursor-pointer bg-white p-4 rounded-lg shadow-md flex flex-col items-center w-32 text-center">
+                    <span class="text-3xl">↔️</span>
+                    <span class="font-bold text-sm mt-1">Switch</span>
+                </div>
+
+                <div id="diagram-pc" data-target="card-finais" class="diagram-item absolute bottom-8 left-[30%] -translate-x-1/2 cursor-pointer bg-white p-4 rounded-lg shadow-md flex flex-col items-center w-32 text-center">
+                    <span class="text-3xl">💻</span>
+                    <span class="font-bold text-sm mt-1">PC / Laptop</span>
+                </div>
+
+                <div id="diagram-server" data-target="card-finais" class="diagram-item absolute bottom-8 left-[70%] -translate-x-1/2 cursor-pointer bg-white p-4 rounded-lg shadow-md flex flex-col items-center w-32 text-center">
+                    <span class="text-3xl">🗄️</span>
+                    <span class="font-bold text-sm mt-1">Servidor</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="space-y-12">
+            <section id="section-finais">
+                <div id="card-finais" class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">1. Dispositivos Finais (End Devices)</h3>
+                    <p class="text-gray-600 mb-6">
+                        Estes são os dispositivos que nós, usuários, utilizamos para interagir com a rede. Eles são a origem e o destino dos dados que viajam pela infraestrutura.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-orange-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-lg text-orange-800 mb-2">Computadores e Laptops</h4>
+                            <p class="text-orange-700">Os pontos de acesso mais comuns para a rede, usados para trabalho, estudo e lazer.</p>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">Servidores</h4>
+                            <p class="text-blue-700">Máquinas potentes que fornecem serviços centralizados, como hospedagem de sites, armazenamento de arquivos e gerenciamento de e-mails para outros dispositivos na rede.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-meios">
+                <div id="card-meios" class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">2. Meios de Transmissão</h3>
+                    <p class="text-gray-600 mb-6">
+                        São os canais físicos ou sem fio por onde os sinais de dados viajam. A escolha do meio afeta a velocidade, o alcance e a confiabilidade da rede.
+                    </p>
+                    <div class="space-y-4">
+                        <p><strong>Cabos de Rede:</strong></p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li><strong>Par Trançado (Ethernet):</strong> O mais comum em redes locais (LANs), usa fios de cobre para transmitir dados.</li>
+                            <li><strong>Fibra Ótica:</strong> Usa pulsos de luz para altíssima velocidade e longas distâncias, imune a interferências.</li>
+                            <li><strong>Cabo Coaxial:</strong> Mais antigo, usado principalmente para TV a cabo e internet.</li>
+                        </ul>
+                        <p><strong>Transmissão Sem Fio (Wireless):</strong></p>
+                         <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li><strong>Wi-Fi:</strong> Usa ondas de rádio para conectar dispositivos sem a necessidade de cabos, oferecendo mobilidade.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-interconexao">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">3. Dispositivos de Interconexão</h3>
+                    <p class="text-gray-600 mb-6">
+                        Esses são os "diretores de tráfego" da rede. Eles conectam os dispositivos e garantem que os dados cheguem ao destino correto de forma eficiente.
+                    </p>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                        <div id="card-roteador" class="bg-green-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-lg text-green-800 mb-2">Roteador (Router)</h4>
+                            <p class="text-green-700">Conecta <strong>redes diferentes</strong> (ex: sua casa à internet). Ele lê os endereços IP para encontrar a melhor rota para os dados.</p>
+                        </div>
+                        <div id="card-switch" class="bg-purple-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-lg text-purple-800 mb-2">Switch</h4>
+                            <p class="text-purple-700">Conecta dispositivos <strong>na mesma rede</strong>. Usa endereços MAC para enviar dados apenas ao destinatário específico, otimizando o tráfego.</p>
+                        </div>
+                        <div id="card-hub" class="bg-red-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-lg text-red-800 mb-2">Hub</h4>
+                            <p class="text-red-700">Um dispositivo mais antigo que retransmite os dados para <strong>todas</strong> as portas, sem inteligência. Ineficiente e raramente usado hoje.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="text-xl font-bold text-center text-gray-700 mb-4">Comparativo de Inteligência e Função</h4>
+                        <div class="chart-container relative w-full h-80 max-w-2xl mx-auto">
+                            <canvas id="deviceComparisonChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-nic">
+                <div id="card-nic" class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">4. Placa de Interface de Rede (NIC)</h3>
+                    <p class="text-gray-600">
+                        A Placa de Rede, ou NIC (Network Interface Card), é a porta de entrada para a rede. É o componente de hardware, seja uma placa física ou um chip integrado, que permite que um computador ou servidor se conecte fisicamente a um meio de transmissão, como um cabo Ethernet ou uma rede Wi-Fi. Cada NIC possui um endereço MAC único que a identifica na rede local.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-20">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>Aplicação Web Interativa criada para fins educacionais.</p>
+            <p class="text-sm text-gray-400 mt-2">&copy; 2025 Explorador de Redes</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const diagramItems = document.querySelectorAll('.diagram-item');
+            
+            diagramItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const targetId = item.dataset.target;
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        
+                        document.querySelectorAll('.highlight').forEach(el => el.classList.remove('highlight'));
+                        
+                        targetElement.classList.add('highlight');
+                        setTimeout(() => {
+                            targetElement.classList.remove('highlight');
+                        }, 2000);
+                    }
+                });
+            });
+
+            const ctx = document.getElementById('deviceComparisonChart').getContext('2d');
+            const deviceComparisonChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Hub', 'Switch', 'Roteador'],
+                    datasets: [{
+                        label: 'Nível de Inteligência / Complexidade',
+                        data: [10, 50, 90],
+                        backgroundColor: [
+                            'rgba(252, 165, 165, 0.6)',
+                            'rgba(196, 181, 253, 0.6)',
+                            'rgba(134, 239, 172, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgba(239, 68, 68, 1)',
+                            'rgba(139, 92, 246, 1)',
+                            'rgba(34, 197, 94, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                             grid: {
+                                color: '#e5e7eb'
+                            }
+                        },
+                        y: {
+                             grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.x !== null) {
+                                        label += context.parsed.x + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
